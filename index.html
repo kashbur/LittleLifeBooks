@@ -1,0 +1,1863 @@
+
+
+Little Life Books
+These tasks run locally and aren't synced across devices
+
+Little Life Books
+/
+this is my website that we've been working on.f irst take a look at all the files so you are up to speed
+
+
+Read 10 files, ran a command
+Read 10 files, ran a command
+Got it — I'm fully caught up! Here's where things stand with your Little Life Books website:
+
+What's been built — a polished, single-page HTML website (index.html) with a beautiful warm aesthetic (terracotta, sage, cream, and forest green palette, Cormorant Garamond + DM Sans + Dancing Script typography). The page flows through:
+
+Nav — fixed, frosted-glass bar with links to How It Works, Story Types, The Science, and Pricing
+Hero — your hero image, headline ("Help your child feel ready before the moment even begins"), and CTA buttons
+Trust bar — four credibility signals (BCET credential, developmental psychology, real families, print-ready)
+Moments section — animated cycling phrases ("Sound familiar?") that rotate through relatable parent scenarios
+Why It Works — brain illustration + the neuroscience explanation
+Story Categories — 5 columns across: Bedtime & Separation, School & Childcare, Big Feelings, Big Firsts, Medical & Health
+How It Works — 3-step process
+Testimonial — Kim F.'s quote about her autistic son
+The Science — Social Story Method, Attachment & Safety, Big Feelings pillars + your BCET credential
+Sample Pages — horizontal scroll of 4 real story excerpts (Noah, Emma, Emery, Rory & Camila)
+Founder section — your bio with a placeholder photo spot
+Pricing — Digital ($45), Digital + Editable ($55, most popular), Digital + Print ($85)
+CTA card + Footer
+There's also an Aesthetic Guide HTML file and several sample PDFs (Daddy Does Bedtime, Goodnight Noah, plane ride, naps, Rory and Camila). The hero image is also in the folder.
+
+One thing I noticed: the Founder section still has a placeholder ("Your photo here") waiting for your actual photo.
+
+What would you like to work on?
+
+i feel like the green in the sections of my webpage dont really go well with the rest of the website. can you take a look
+
+
+Used Claude in Chrome integration, used 2 tools, loaded tools
+Used Claude in Chrome integration, used 2 tools, loaded tools
+Good, the site is open. Let me scroll through to see all the green sections.
+
+
+Used Claude in Chrome integration, used 2 tools, loaded tools
+Used Claude in Chrome integration, used 2 tools, loaded tools
+Let me serve the file locally so I can scroll through it properly.
+
+
+Used Claude in Chrome integration, loaded tools, ran a command
+Used Claude in Chrome integration, loaded tools, ran a command
+Good, I can see the hero section clearly. Now let me scroll through to see the green sections.
+
+
+Used Claude in Chrome integration, loaded tools, used a tool
+Used Claude in Chrome integration, loaded tools, used a tool
+Let me try scrolling in the localhost tab and take a screenshot to see the green sections.
+
+
+Used Claude in Chrome integration
+Used Claude in Chrome integration
+I have a thorough read of the code already, so I know exactly what's going on. Let me describe what I see and then fix it.
+
+The green shows up in four key places:
+
+Testimonial section background — 
+#8FAF72 (medium sage green)
+Featured pricing card background — same 
+#8FAF72
+CTA card background — same 
+#8FAF72
+Footer background — 
+#2D4438 (deep forest green)
+The rest of the site is built on a beautiful warm palette — terracotta, cream, sand, and dark brown. These green sections feel disconnected because the green leans cool while everything else is warm. Here's what I'd suggest swapping them to:
+
+Testimonial → soft blush var(--terra-pale) 
+#F2DDD1 — keeps it light and warm
+Featured pricing card → deep terracotta var(--terra-dark) 
+#A85234 — still a standout accent, but warm
+CTA card → warm dark brown var(--dark) 
+#3C2415 — dramatic but cohesive
+Footer → warm very dark brown 
+#2A1A0E — replaces the cold forest deep
+Want me to go ahead and make those changes?
+
+yes lets go ahead
+
+
+Updated todo list, loaded tools, edited a file
+Updated todo list, loaded tools, edited a file
+Now the featured pricing card — changing background and fixing all the text colors that won't work on a dark background:
+
+
+Edited 4 files, searched code, read a file
+Edited 4 files, searched code, read a file
+Now the CTA card — background and the sub-text color:
+
+
+Edited 2 files
+Edited 2 files
+Also update the CTA blobs to use terracotta instead of the green one:
+
+
+Edited a file, updated todo list
+Edited a file, updated todo list
+Now the footer — background, text, and link colors:
+
+
+Edited 3 files, updated todo list
+Edited 3 files, updated todo list
+Now let me reload the page and visually verify each section:
+
+
+Used Claude in Chrome integration, used a tool
+Used Claude in Chrome integration, used a tool
+The screenshot is still showing the old file tab — let me quickly verify the changes look right by reading the modified sections directly:
+
+
+Read 4 files, searched code
+Read 4 files, searched code
+All changes are confirmed. Let me mark this done.
+
+
+Updated todo list
+Updated todo list
+All done! Here's a summary of what changed:
+
+Testimonial section — was sage green, now a soft warm blush (
+#F2DDD1). The dark text already worked perfectly on it, so nothing else needed to change.
+
+Featured pricing card — was sage green, now a rich dark warm brown (
+#5A3820). Updated all the text inside from dark brown (invisible on dark) to warm light tones — price is now cream-white, feature list is sand-light, the tier label is a warm terracotta-light.
+
+CTA card — was sage green, now the deep warm dark brown (
+#3C2415). Updated the subtitle from dark (invisible) to a sandy-warm tone. Also swapped the green glow blob for a soft terracotta one so the ambient light stays warm.
+
+Footer — was forest deep green, now a very dark warm espresso (
+#2A1A0E). Updated all the previously greenish text (links, description, copyright) to warm sand tones.
+
+Refresh your browser on the index.html file to see the updates!
+
+ok for the "Sound familiar?" section: Instead of floating text, give the moment a container Sound familiar?
+
+[ soft rounded box ]
+Bedtime takes an hour of negotiations every night
+[ end box ]
+
+That’s exactly why we created Little Life Books. 
+Styling:
+
+very light tinted background (barely darker than page)
+soft shadow or border
+slightly larger padding
+
+Thought process
+Thought process
+Simple, clean change — just needs the moments-phrase-wrap styled up. Let me do it.
+
+
+Edited 2 files, searched code, read a file
+Edited 2 files, searched code, read a file
+Done! The phrase wrap now has a soft rounded card with:
+
+var(--cream) background (
+#F8F0E3) — just a whisper darker than the --white section background
+18px border radius for that soft, friendly feel
+28px/44px padding so the text has room to breathe
+1px border at 7% dark opacity — barely visible, just enough to define the edge
+Subtle box shadow — a gentle lift without feeling heavy
+Refresh the page to see it. The cycling phrases should now feel much more intentional and anchored rather than floating in the middle of the section.
+
+can you ues monocolored svg icons instead of emojis: designed by a Board Certified Educational Therapist
+🧠Rooted in developmental psychology
+💛Used by real families, including our own
+🖨Print-ready or digital delivery
+
+
+Searched code, read a file
+Searched code, read a file
+Now I'll update the CSS to properly size the SVG icons, then swap in the icons:
+
+
+Edited a file
+Edited a file
+Now replace the emoji spans with inline SVGs:
+
+
+Edited a file
+Edited a file
+Done! Here's what each icon maps to:
+
+Graduation cap → Designed by a BCET
+Lightbulb → Rooted in developmental psychology
+Heart → Used by real families
+Printer → Print-ready or digital delivery
+All icons use the same stroke style as the category icons already on the page (1.8px, round caps/joins), so they'll feel visually consistent. They're set to color: var(--terra) — the same terracotta as other small accent elements — rather than the mixed emoji colors. Refresh to see them!
+
+Uploaded image
+image.jpeg
+this doesnt look great still: what do you suggest
+
+
+Thought process
+Thought process
+Looking at it, I can see a few things making it feel off — the box is too wide and flat for how little text is inside, and the section has too much empty air around everything. A few options to consider:
+
+Option A — Tighter card, bigger text Reduce the box to ~440px wide, bump the phrase font up so it fills the space confidently, and cut the section padding. The box should feel snug around the text, not like a banner.
+
+Option B — Drop the box, lead with a large italic phrase Skip the container entirely. Make the rotating phrase a much larger, prominent typographic moment — like 2.2–2.8rem, centered, terracotta italic — with a subtle thin rule above/below. Cleaner and more editorial.
+
+Option C — Pill/tag treatment Instead of a rectangle, use a tighter pill shape with just enough horizontal padding to hug the text. Add a subtle terracotta left border accent. Feels more intentional and less like a placeholder.
+
+My recommendation is Option A — the box idea works, it just needs better proportions. What do you think, or do you want to go a different direction?
+
+lets do option B
+
+
+Read a file, edited a file
+Read a file, edited a file
+Now add the thin rule element to the HTML between the headline and the phrase:
+
+
+Read a file, searched code, edited a file
+Read a file, searched code, edited a file
+Done! Here's what changed:
+
+"Sound familiar?" is now a small uppercase label in warm gray — it reads as a quiet lead-in rather than a big headline competing with the phrase
+A thin 48px rule separates it from the phrase, giving the eye a beat before the main text
+The phrase itself is now ~2.5rem — large, confident, and terracotta — it does all the work
+Removed the box entirely — no background, no border, no shadow
+Tightened the section padding from 110px to 80px so it doesn't feel like it's floating in a void
+The bridge line below also stepped down in size to stay subordinate to the phrase
+Refresh to see it!
+
+for the process section can you make it vertical: [ 1 ]
+Tell us about your child
+Short line
+↓ (subtle line)
+[ 2 ]
+We create their story
+Short line
+↓ (subtle line)
+[ 3 ]
+A book that’s truly theirs
+Short line 
+1. Keep it centered (important)
+
+Don’t left-align this—keep your brand consistency.
+
+Use a faint vertical connector line
+very thin
+low opacity
+warm neutral color
+👉 makes it feel like a journey without being heavy
+
+Increase spacing between steps
+Let each step breathe more than your current layout.
+
+Slight scale difference
+Make:
+
+numbers = slightly more prominent
+titles = strong
+body = lighter + shorter
+Show more
+
+Thought process
+Thought process
+Let me read the current how-it-works section closely before making changes.
+
+
+Read 2 files, searched code
+Read 2 files, searched code
+Good. Now I'll update the CSS and HTML together:
+
+
+Edited a file
+Edited a file
+Now update the HTML to add the connector divs and remove the extra bottom padding on the last step:
+
+
+Edited a file
+Edited a file
+Done! Here's what changed:
+
+Layout — flipped from 3-column grid to centered flex column, capped at 420px wide so it feels intentional rather than stretched
+Connector — a 1px × 44px line at 14% dark opacity sits between each step, visually threading the journey without any heaviness
+Number circle — bumped from 52px → 58px, and font from 1.4 → 1.6rem. More presence without being loud
+Title — nudged up slightly to 1.35rem, stays bold
+Body text — same size but now constrained to 300px max-width so it reads as a tight caption, not a paragraph
+Removed the old horizontal connector pseudo-element and the responsive grid override (no longer needed)
+Refresh to see it!
+
+for the pricing switch it to this: 
+Option 1: Guided choice (BEST)
+
+Change structure to:
+
+Start with your story
+
+$45 — Digital
+
+A beautiful, fully personalized storybook you can read tonight.
+
+👉 Primary CTA here
+
+Make it editable
+
++$10 — Editable version
+
+Update the story as your child grows.
+
+Turn it into a keepsake
+
++$30 — Printed book
+
+A professionally printed copy for their shelf.
+
+Show more
+
+Thought process
+Thought process
+Let me read the full pricing CSS and HTML to plan the replacement cleanly.
+
+
+Read 3 files
+Read 3 files
+Good, I have everything I need. Now I'll replace both the CSS and the HTML for pricing in one go.
+
+
+Edited a file
+Edited a file
+Now replace the HTML:
+
+
+Edited a file
+Edited a file
+Done! Here's what the new pricing section looks like structurally:
+
+Primary card (max 480px, centered, white with a light shadow):
+
+Small uppercase label "START WITH YOUR STORY"
+$45 — Digital with the price large and the format inline
+One-sentence description
+3 tight feature checkmarks
+Full-width primary CTA button
+Two add-on cards (side by side, same max width, lighter weight):
+
++$10 / +$30 in large Cormorant so the delta pricing reads immediately
+Tiny uppercase sublabel (Editable version / Printed book)
+Short title + one-line description
+No button — they're informational, the ordering happens through the main CTA
+The visual hierarchy now clearly says: here's what you're buying, here's what you can add. Refresh to see it!
+
+and then for behind the book seciton: I’m Kristina — a Board Certified Educational Therapist and a mom.
+
+This didn’t start as a business. It started at home with my one-year-old.
+
+I work from home, often in the evenings. And every time I went upstairs to my office, she would fall apart when my husband stepped in. Even though she was safe, even though nothing was actually wrong—it felt like too much, too fast.
+
+So I tried something I’d used for years with my students: a social story.
+
+We made a simple book about what would happen.
+Mommy gives a hug. Mommy goes upstairs. You can still hear her talking. Daddy stays with you. Then Mommy comes back.
+
+We read it together. We walked through it step by step.
+
+And it changed everything.
+
+She wasn’t surprised anymore. She knew what to expect. It felt familiar.
+
+So we made another.
+
+One for her first airplane ride.
+One for going to the doctor.
+One for napping in a new place.
+
+Each time, the same thing happened:
+what felt big and overwhelming started to feel manageable.
+
+That’s where Little Life Books began.
+
+Show more
+
+Thought process
+Thought process
+Let me read the current founder section CSS and HTML in full before editing.
+
+
+Read 2 files, searched code
+Read 2 files, searched code
+Good. Now I'll update both the CSS (align photo to top, add story block styles) and the HTML text:
+
+
+Edited a file
+Edited a file
+Now replace the HTML content:
+
+
+Edited a file
+Edited a file
+Done! Here's what changed and why each decision was made:
+
+CSS changes:
+
+align-items: start on the grid — so the photo anchors to the top of the text, not floats in the middle of a long column
+position: sticky; top: 88px on the photo — as you scroll through the story, the photo stays visible in the left column, which feels like reading alongside you (nice on longer text)
+.founder-em — a slightly larger italic Cormorant style for the two punchy lines ("And it changed everything." / "That's where Little Life Books began.") so they land with weight
+.founder-story-block — left terracotta border + italic serif for the mini book excerpt, visually distinct from prose so it reads like a real story page
+.founder-book-list — tighter line spacing between the three "One for…" lines so they read as a rhythmic list, not separate thoughts
+A thin top border on .founder-sig to give the signature a clean separation from the story
+Refresh to see it!
+
+i think its too long. can we not keep so many lin ebreaks
+
+
+Searched code
+Searched code
+I can see the issue — too many one-liners each getting their own <p> break. I'll fold the short sentences into their natural neighbors, keeping the story block and book list as the only intentional "breaks."
+
+
+Edited 2 files, read a file
+Edited 2 files, read a file
+Done. Down from 11 paragraph breaks to 5 — here's what got merged:
+
+Paras 1+2 → "I'm Kristina… This didn't start as a business…"
+Paras 4+5 → "So I tried… We made a simple book…"
+Paras 6+7+8 → "We read it together… and it changed everything. She wasn't surprised…"
+Final two paras → "Each time… That's where Little Life Books began."
+The story block and book list stay as the only intentional visual pauses, which actually makes them land harder now that they're not surrounded by noise. Refresh to see it!
+
+nevermind change it to this: Tested on my own daughter.**
+
+I’m Kristina — a Board Certified Educational Therapist and a mom. This didn’t start as a business. It started at home with my one-year-old.
+
+I work from home, often in the evenings. And every time I went upstairs, she would fall apart when my husband stepped in. Even though she was safe, it felt like too much, too fast.
+
+So I tried something I’d used for years with my students: a simple social story. We made a little book about what would happen.
+
+Mommy gives a hug. Mommy goes upstairs. You can still hear her talking. Daddy stays with you. Then Mommy comes back.
+
+We read it together—and everything changed. She wasn’t surprised anymore. She knew what to expect. It felt familiar.
+
+So we made another. One for her first airplane ride. One for the doctor. One for sleeping somewhere new.
+
+Each time, the same thing happened: what felt big started to feel manageable. That’s where Little Life Books began.
+
+Show more
+
+Thought process
+Thought process
+Simple swap — much tighter. The book list folds into the paragraph now so I can remove that wrapper too.
+
+
+Read a file, edited a file
+Read a file, edited a file
+Done — 7 paragraphs down to 5, and the book list is now a natural sentence. Refresh to see it!
+
+I'm Kristina — a Board Certified Educational Therapist and a mom. This didn't start as a business. It started at home with my one-year-old.
+I work from home, often in the evenings. And every time I went upstairs, she would fall apart when my husband stepped in. Even though she was safe, it felt like too much, too fast.
+So I tried something I'd used for years with my students: a simple social story. We made a little book about what would happen.
+Mommy gives a hug. Mommy goes upstairs. You can still hear her talking. Daddy stays with you. Then Mommy comes back.
+We read it together — and everything changed. She wasn't surprised anymore. She knew what to expect. It felt familiar.
+So we made another. One for her first airplane ride. One for the doctor. One for sleeping somewhere new.
+Each time, the same thing happened: what felt big started to feel manageable. That's where Little Life Books began.
+
+Show more
+i dont think i need it to to be on a seperate line for this: Mommy gives a hug. Mommy goes upstairs. You can still hear her talking. Daddy stays with you. Then Mommy comes back.
+
+
+Read a file, edited a file
+Read a file, edited a file
+Done — it's now just a plain paragraph flowing with the rest of the text.
+
+i completely lost the index because it was overrided. can you recreate what you remember
+
+
+Thought process
+Thought process
+Let me check if the file still exists first.
+
+
+Ran 3 commands
+Ran 3 commands
+The file is gone. I have the full picture from reading it throughout our session — let me reconstruct it with all the changes we made.
+
+
+Created a file, read a file
+Created a file, read a file
+
+Created index.html
+index.html
+Let me read the current state of the index.html file to understand where we left off.
+
+
+Read index.html
+Done
+The file is there and intact. What would you like to work on next, Kristina?
+
+can you point me to where it is
+
+
+Thought process
+Thought process
+Here it is:
+
+[Open index.html](computer:///sessions/funny-beautiful-curie/mnt/Little Life Books/index.html)
+
+It's inside the "Little Life Books" folder you have selected.
+
+Index
+Code · HTML 
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses. Give us feedback
+Index · HTML
+
+
+Google Chrome
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Little Life Books — A story about their real life, before they live it.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --terra:        #BF6242;
+      --terra-light:  #D07E62;
+      --terra-dark:   #A85234;
+      --terra-pale:   #F2DDD1;
+      --sage:         #6B8551;
+      --sage-light:   #8FAF72;
+      --sage-pale:    #DDE8D4;
+      --cream:        #F8F0E3;
+      --sand-light:   #EFE2CC;
+      --sand-mid:     #D9C3A4;
+      --sand-dark:    #C4A882;
+      --gold:         #D4A840;
+      --blush:        #E09080;
+      --dark:         #3C2415;
+      --dark-mid:     #5A3820;
+      --warm-mid:     #7A4D32;
+      --warm-gray:    #8A7A70;
+      --forest:       #8FAF72;
+      --forest-deep:  #2D4438;
+      --forest-mid:   #9EC080;
+      --white:        #FFFCF7;
+    }
+ 
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.7; overflow-x: hidden; }
+ 
+    /* ─── UTILS ─────────────────────────────────────────── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 768px) { .container { padding: 0 24px; } }
+ 
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 14px;
+    }
+    .eyebrow.sage { color: var(--sage); }
+    .eyebrow.light { color: var(--sand-mid); }
+ 
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 15px 32px; border-radius: 50px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      font-weight: 500; letter-spacing: 0.01em;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.22s ease;
+    }
+    .btn-primary {
+      background: var(--terra); color: var(--white);
+      box-shadow: 0 4px 20px rgba(196,113,74,0.35);
+    }
+    .btn-primary:hover { background: var(--terra-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196,113,74,0.4); }
+    .btn-outline-light {
+      background: transparent; color: var(--dark);
+      border: 1.5px solid rgba(60,36,21,0.35);
+    }
+    .btn-outline-light:hover { border-color: var(--terra); color: var(--terra); background: rgba(255,252,247,0.15); }
+    .btn-outline-terra {
+      background: transparent; color: var(--terra);
+      border: 1.5px solid var(--terra);
+    }
+    .btn-outline-terra:hover { background: rgba(196,113,74,0.06); }
+    .btn-sage { background: var(--sage); color: var(--white); box-shadow: 0 4px 16px rgba(107,133,81,0.3); }
+    .btn-sage:hover { background: var(--sage-light); transform: translateY(-2px); }
+    .btn-sm { padding: 11px 22px; font-size: 0.82rem; }
+ 
+    /* ─── NAV ───────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(255,252,247,0.68);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(239,226,204,0.45);
+      padding: 0 40px;
+      height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-brand {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.7rem; color: var(--terra);
+      text-decoration: none; white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .nav-brand:hover { color: var(--terra-dark); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.03em; color: var(--warm-mid);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--terra); }
+    .nav-cta { display: flex; align-items: center; gap: 12px; }
+    @media (max-width: 820px) {
+      .nav-links { display: none; }
+      nav { padding: 0 24px; }
+    }
+ 
+    /* ─── HERO ──────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(150deg, #F5F0E8 0%, #EDE4D6 100%);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      padding-top: 68px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 55% 70% at 90% 50%, rgba(196,113,74,0.09) 0%, transparent 65%);
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1.25fr;
+      gap: 48px; align-items: center;
+      min-height: calc(100vh - 68px);
+      padding: 80px 0;
+    }
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 60px 0; }
+    }
+    .hero-text .hero-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: #9C8F83; letter-spacing: 0.26em; margin-bottom: 20px; display: block;
+    }
+    .hero-headline {
+      margin-bottom: 18px;
+      line-height: 1.15;
+    }
+    .hero-line-1 {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5.8vw, 4.8rem);
+      font-weight: 500;
+      font-style: normal;
+      color: #1C1814;
+      letter-spacing: -0.02em;
+    }
+    .hero-line-2 {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.6vw, 3.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: #4A4540;
+      letter-spacing: 0.01em;
+      margin-top: 6px;
+    }
+    .hero-situations {
+      font-size: 0.97rem; color: #6B6259;
+      line-height: 1.6; margin-bottom: 28px;
+    }
+    .hero-body {
+      font-size: 0.95rem; color: #7A7066;
+      line-height: 1.9; max-width: 480px;
+      margin-bottom: 40px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .hero-social-proof {
+      margin-top: 48px; padding-top: 36px;
+      border-top: 1px solid rgba(60,36,21,0.18);
+      display: flex; gap: 40px; flex-wrap: wrap;
+    }
+    .proof-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 600;
+      color: var(--terra-dark); line-height: 1;
+      margin-bottom: 4px;
+    }
+    .proof-label { font-size: 0.78rem; color: var(--dark-mid); letter-spacing: 0.04em; }
+ 
+    /* Hero image */
+    .hero-book-side {
+      position: relative;
+      display: flex; justify-content: center; align-items: center;
+    }
+    .book-wrap { position: relative; }
+    .hero-annotation {
+      position: absolute;
+      top: 36%;
+      right: -148px;
+      width: 128px;
+      text-align: left;
+      pointer-events: none;
+      color: var(--warm-mid);
+      opacity: 0.65;
+    }
+    .hero-annotation-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.5;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .hero-annotation-arrow {
+      width: 64px;
+      height: 52px;
+      display: block;
+      margin-right: auto;
+    }
+    @media (max-width: 900px) {
+      .hero-annotation { display: none; }
+    }
+    .hero-img {
+      width: 100%; max-width: 858px;
+      filter: drop-shadow(0 32px 60px rgba(160,100,60,0.18)) drop-shadow(0 6px 16px rgba(160,100,60,0.10));
+    }
+    @media (max-width: 900px) { .hero-img { max-width: 460px; } }
+ 
+    /* ─── TRUST BAR ─────────────────────────────────────── */
+    .trust-bar {
+      background: var(--sand-light);
+      padding: 20px 40px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 48px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.8rem; font-weight: 500;
+      color: var(--warm-mid); letter-spacing: 0.02em;
+    }
+    .trust-icon { width: 17px; height: 17px; flex-shrink: 0; color: var(--terra); }
+ 
+    /* ─── SECTIONS ──────────────────────────────────────── */
+    section { padding: 100px 0; }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500; color: var(--dark);
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .section-body {
+      font-size: 1rem; color: var(--warm-mid);
+      max-width: 580px; margin: 0 auto;
+      line-height: 1.85;
+    }
+ 
+    /* ─── HOW IT WORKS ──────────────────────────────────── */
+    .how-section { background: var(--sand-light); }
+    .steps {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .step {
+      text-align: center;
+      padding: 0;
+      width: 100%;
+    }
+    .step-connector {
+      width: 1px;
+      height: 44px;
+      background: rgba(60,36,21,0.14);
+      margin: 0 auto;
+    }
+    .step-num {
+      width: 58px; height: 58px; border-radius: 50%;
+      background: var(--terra-pale);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 600; color: var(--terra);
+      border: 1.5px solid rgba(196,113,74,0.25);
+    }
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 10px;
+    }
+    .step-text {
+      font-size: 0.86rem; color: var(--warm-gray);
+      line-height: 1.8; max-width: 300px; margin: 0 auto;
+    }
+ 
+    /* ─── CATEGORIES ────────────────────────────────────── */
+    .categories-section {
+      background: var(--cream);
+      padding: 100px 0;
+    }
+    .cat-columns {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0 40px;
+      margin-top: 60px;
+    }
+    .cat-col {
+      border-top: 1.5px solid var(--sand-mid);
+      padding-top: 28px;
+    }
+    .cat-col-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .cat-col-icon {
+      width: 16px; height: 16px;
+      flex-shrink: 0;
+      color: var(--sage);
+      opacity: 0.85;
+    }
+    .cat-col-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .cat-col-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .cat-col-list li a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.97rem;
+      font-weight: 400;
+      color: var(--dark-mid);
+      text-decoration: none;
+      padding: 9px 0;
+      line-height: 1.4;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      position: relative;
+    }
+    .cat-col-list li a::after {
+      content: '→';
+      font-size: 0.78rem;
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity 0.2s, transform 0.2s;
+      color: var(--terra);
+    }
+    .cat-col-list li a:hover {
+      color: var(--dark);
+    }
+    .cat-col-list li a:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .cat-see-all {
+      text-align: center;
+      margin-top: 56px;
+    }
+    @media (max-width: 1050px) {
+      .cat-columns { grid-template-columns: repeat(3, 1fr); gap: 40px 36px; }
+    }
+    @media (max-width: 700px) {
+      .cat-columns { grid-template-columns: repeat(2, 1fr); gap: 36px 32px; }
+    }
+    @media (max-width: 480px) {
+      .cat-columns { grid-template-columns: 1fr; gap: 32px 0; }
+    }
+ 
+    /* ─── TESTIMONIAL ───────────────────────────────────── */
+    .testimonial-section {
+      background: var(--terra-pale); position: relative; overflow: hidden;
+    }
+    .testimonial-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 10% 50%, rgba(160,86,48,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 90% 50%, rgba(107,133,81,0.08) 0%, transparent 55%);
+    }
+    .testimonial-inner {
+      position: relative; z-index: 1;
+      max-width: 800px; margin: 0 auto; text-align: center;
+    }
+    .testimonial-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem; line-height: 0.6;
+      color: rgba(60,36,21,0.2); margin-bottom: 24px;
+    }
+    .testimonial-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-style: italic; font-weight: 400;
+      color: var(--dark); line-height: 1.55;
+      margin-bottom: 32px;
+    }
+    .testimonial-cite { font-size: 0.85rem; color: var(--dark-mid); }
+    .testimonial-cite strong { color: var(--dark); font-weight: 500; }
+ 
+    /* ─── SCIENCE ───────────────────────────────────────── */
+    .science-section { background: var(--sand-light); }
+    .science-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    @media (max-width: 840px) { .science-grid { grid-template-columns: 1fr; gap: 48px; } }
+    .science-text .section-title { text-align: left; }
+    .science-text .section-title + p { text-align: left; max-width: none; }
+    .science-text p {
+      font-size: 0.97rem; color: var(--warm-mid);
+      line-height: 2; margin-bottom: 24px;
+      max-width: 460px;
+    }
+    .science-credential {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--white); padding: 16px 20px;
+      border-radius: 14px; margin-top: 12px;
+      box-shadow: 0 2px 12px rgba(60,36,21,0.06);
+    }
+    .science-credential-icon { font-size: 1.4rem; }
+    .science-credential-text { font-size: 0.82rem; color: var(--warm-mid); line-height: 1.5; }
+    .science-credential-text strong { display: block; color: var(--dark); font-weight: 500; }
+    .science-pillars {
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .pillar {
+      background: var(--white); border-radius: 16px;
+      padding: 30px 32px;
+      box-shadow: 0 2px 12px rgba(60,36,21,0.05);
+      border-left: 3px solid var(--terra);
+    }
+    .pillar.sage { border-left-color: var(--sage); }
+    .pillar.gold { border-left-color: var(--gold); }
+    .pillar-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 8px;
+    }
+    .pillar-text { font-size: 0.87rem; color: var(--warm-gray); line-height: 1.85; }
+ 
+    /* ─── SAMPLE PAGES ──────────────────────────────────── */
+    .sample-section { background: var(--white); }
+    .sample-books {
+      display: flex; gap: 24px; overflow-x: auto;
+      padding-bottom: 16px; scroll-snap-type: x mandatory;
+    }
+    .sample-books::-webkit-scrollbar { height: 4px; }
+    .sample-books::-webkit-scrollbar-track { background: var(--sand-light); border-radius: 4px; }
+    .sample-books::-webkit-scrollbar-thumb { background: var(--sand-dark); border-radius: 4px; }
+    .sample-page {
+      min-width: 300px; border-radius: 18px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(60,36,21,0.1);
+      scroll-snap-align: start; flex-shrink: 0;
+    }
+    .sample-page-img {
+      height: 220px; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 3.5rem; position: relative;
+    }
+    .sample-page-text {
+      background: var(--white); padding: 22px 24px;
+    }
+    .sample-story-name {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--terra);
+      margin-bottom: 8px;
+    }
+    .sample-page-copy {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; line-height: 1.7; color: var(--dark);
+      font-style: italic;
+    }
+ 
+    /* ─── PRICING ───────────────────────────────────────── */
+    .pricing-section { background: var(--cream); }
+ 
+    .pricing-main {
+      max-width: 480px; margin: 0 auto 18px;
+      background: var(--white); border-radius: 24px;
+      padding: 44px 44px 40px;
+      box-shadow: 0 4px 32px rgba(60,36,21,0.09);
+      border: 1px solid rgba(60,36,21,0.06);
+    }
+    .pricing-main-label {
+      display: block; font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 18px;
+    }
+    .pricing-main-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem; font-weight: 600;
+      color: var(--dark); line-height: 1;
+    }
+    .pricing-main-format {
+      font-size: 0.85rem; color: var(--warm-gray); margin-left: 8px;
+    }
+    .pricing-main-desc {
+      font-size: 0.95rem; color: var(--warm-mid);
+      line-height: 1.75; margin: 16px 0 28px;
+    }
+    .pricing-main-divider { height: 1px; background: var(--sand-light); margin: 0 0 28px; }
+    .pricing-main-features {
+      list-style: none; display: flex; flex-direction: column;
+      gap: 10px; margin-bottom: 32px;
+    }
+    .pricing-main-features li {
+      font-size: 0.86rem; color: var(--warm-mid);
+      display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+    }
+    .pricing-main-features li::before {
+      content: '✓'; color: var(--terra); font-weight: 600;
+      font-size: 0.82rem; flex-shrink: 0; margin-top: 1px;
+    }
+    .pricing-addons {
+      max-width: 480px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    }
+    @media (max-width: 560px) {
+      .pricing-addons { grid-template-columns: 1fr; }
+      .pricing-main { padding: 36px 28px 32px; }
+    }
+    .pricing-addon {
+      background: var(--white); border-radius: 18px;
+      padding: 26px 28px;
+      border: 1px solid rgba(60,36,21,0.07);
+      box-shadow: 0 2px 14px rgba(60,36,21,0.05);
+    }
+    .pricing-addon-delta {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 600;
+      color: var(--terra-dark); line-height: 1; margin-bottom: 4px;
+    }
+    .pricing-addon-sublabel {
+      display: block; font-size: 0.67rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--warm-gray); margin-bottom: 12px;
+    }
+    .pricing-addon-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 7px;
+    }
+    .pricing-addon-desc {
+      font-size: 0.84rem; color: var(--warm-gray); line-height: 1.65;
+    }
+ 
+    /* ─── CTA SECTION ───────────────────────────────────── */
+    .cta-headline {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: var(--terra); line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .cta-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-weight: 300; font-style: italic;
+      color: var(--sand-light); margin-bottom: 40px;
+    }
+    .cta-section .btn-primary { margin: 0 auto; }
+ 
+    /* ─── FOOTER ────────────────────────────────────────── */
+    footer {
+      background: #2A1A0E; padding: 64px 40px 40px;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 60px;
+    }
+    @media (max-width: 768px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    .footer-brand {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem; color: var(--terra-light);
+      margin-bottom: 12px;
+    }
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 1rem;
+      color: var(--warm-gray); margin-bottom: 20px; line-height: 1.5;
+    }
+    .footer-desc { font-size: 0.82rem; color: var(--sand-mid); line-height: 1.8; }
+    .footer-col-title {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--warm-gray); margin-bottom: 18px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      font-size: 0.85rem; color: var(--sand-mid);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--terra-light); }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto;
+      padding-top: 28px; border-top: 1px solid rgba(196,168,130,0.2);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 0.75rem; color: var(--sand-dark); }
+ 
+    /* ─── DIVIDER ───────────────────────────────────────── */
+    .floral-divider {
+      text-align: center; padding: 8px 0;
+      font-size: 1.1rem; color: var(--sand-dark);
+      letter-spacing: 0.6em;
+    }
+ 
+    /* ─── WHY IT WORKS BRIDGE ───────────────────────────── */
+    .why-section {
+      background: var(--terra-pale);
+      padding: 80px 0;
+    }
+    .why-inner {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .why-brain {
+      width: 100%;
+      opacity: 0.22;
+      color: var(--terra-dark);
+    }
+    .why-text .eyebrow {
+      display: block;
+      margin-bottom: 20px;
+    }
+    .why-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+      font-weight: 400; font-style: italic;
+      color: var(--dark-mid);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .why-quote strong {
+      font-style: normal; font-weight: 500;
+      color: var(--dark);
+    }
+    @media (max-width: 700px) {
+      .why-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+      }
+      .why-brain { width: 120px; margin: 0 auto; }
+    }
+ 
+    /* ─── MOMENTS SECTION ───────────────────────────────── */
+    .moments-section {
+      background: var(--white);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .moments-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .moments-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      line-height: 1.3;
+      margin-bottom: 36px;
+    }
+    .moments-rule {
+      width: 48px;
+      height: 1px;
+      background: rgba(60,36,21,0.18);
+      margin: 0 auto 36px;
+    }
+    .moments-phrase-wrap {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+    }
+    .moments-phrase {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--terra);
+      line-height: 1.4;
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+      will-change: opacity, transform;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .moments-phrase { transition: none; }
+    }
+    .moments-bridge {
+      margin-top: 36px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--warm-gray);
+      letter-spacing: 0.01em;
+    }
+ 
+    /* ─── FOR YOU SECTION ───────────────────────────────── */
+    .for-you-section { background: var(--cream); padding: 72px 0; }
+    .for-you-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+    .for-you-lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 400; font-style: italic;
+      color: var(--dark); margin-bottom: 36px;
+    }
+    .for-you-list { list-style: none; display: inline-flex; flex-direction: column; gap: 18px; text-align: left; }
+    .for-you-list li {
+      font-size: 0.97rem; color: var(--dark-mid);
+      line-height: 1.65; padding-left: 26px; position: relative;
+    }
+    .for-you-list li::before {
+      content: '✦'; position: absolute; left: 0; top: 0.3em;
+      color: var(--terra); font-size: 0.65rem;
+    }
+ 
+    /* ─── FOUNDER SECTION ────────────────────────────────── */
+    .founder-section { background: var(--sand-light); }
+    .founder-inner {
+      display: grid; grid-template-columns: 260px 1fr;
+      gap: 80px; align-items: start;
+    }
+    @media (max-width: 800px) {
+      .founder-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .founder-photo {
+      width: 260px; height: 320px;
+      background: linear-gradient(150deg, var(--terra-pale) 0%, var(--sand-mid) 100%);
+      border-radius: 100px 100px 100px 32px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--warm-mid); opacity: 0.6;
+      position: sticky; top: 88px;
+    }
+    @media (max-width: 800px) { .founder-photo { width: 180px; height: 220px; position: static; } }
+    .founder-text p {
+      font-size: 0.95rem; color: var(--warm-mid);
+      line-height: 1.95; margin-bottom: 16px;
+    }
+    .founder-sig { margin-top: 28px; padding-top: 28px; border-top: 1px solid rgba(60,36,21,0.1); }
+    .founder-sig-name {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.9rem; color: var(--terra); line-height: 1;
+    }
+    .founder-sig-title {
+      font-size: 0.74rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--warm-gray); margin-top: 6px;
+    }
+ 
+    /* ─── PRICING BRIDGE ─────────────────────────────────── */
+    .pricing-bridge {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--warm-mid); text-align: center;
+      margin-bottom: 48px; margin-top: -32px;
+    }
+ 
+    /* ─── HERO BLOBS ─────────────────────────────────────── */
+    .hero-blobs { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .hero-blob { position: absolute; border-radius: 50%; filter: blur(90px); }
+    .hero-blob-1 {
+      width: 500px; height: 500px;
+      background: rgba(196,113,74,0.11);
+      top: -100px; right: -60px;
+    }
+    .hero-blob-2 { display: none; }
+    .hero-blob-3 {
+      width: 320px; height: 320px;
+      background: rgba(196,113,74,0.07);
+      bottom: -40px; left: -60px;
+    }
+ 
+    /* ─── CTA CARD ───────────────────────────────────────── */
+    .cta-section {
+      background: var(--cream);
+      padding: 60px 0 80px;
+    }
+    .cta-card {
+      background: var(--dark);
+      border-radius: 2rem;
+      padding: 80px 60px;
+      position: relative; overflow: hidden;
+      text-align: center;
+    }
+    .cta-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(196,113,74,0.18) 0%, transparent 65%);
+    }
+    .cta-card .cta-blob-1 {
+      position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none;
+      width: 340px; height: 340px;
+      background: rgba(196,113,74,0.25);
+      top: -80px; right: -60px;
+    }
+    .cta-card .cta-blob-2 {
+      position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none;
+      width: 260px; height: 260px;
+      background: rgba(196,113,74,0.2);
+      bottom: -60px; left: -40px;
+    }
+    .cta-inner { position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+ 
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-brand">Little Life Books</a>
+    <ul class="nav-links">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#stories">Story Types</a></li>
+      <li><a href="#science">The Science</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#stories" class="btn btn-outline-terra btn-sm">Browse Stories</a>
+      <a href="#pricing" class="btn btn-primary btn-sm">Create a Book</a>
+    </div>
+  </nav>
+ 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-blobs">
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+      <div class="hero-blob hero-blob-3"></div>
+    </div>
+    <div class="container">
+      <div class="hero-inner">
+ 
+        <div class="hero-text">
+          <span class="hero-eyebrow">Personalized · Illustrated · Backed by Science</span>
+          <h1 class="hero-headline">
+            <span class="hero-line-1">Help your child feel ready</span>
+            <span class="hero-line-2">before the moment even begins.</span>
+          </h1>
+          <p class="hero-situations">For bedtime struggles, first days, doctor's appointments, and big feelings.</p>
+          <p class="hero-body">A personalized story built around your child—their name, their family, their routine—designed to make new experiences feel safe, familiar, and manageable.</p>
+          <div class="hero-actions">
+            <a href="#pricing" class="btn btn-primary">Create Your Child's Story →</a>
+            <a href="#stories" class="btn btn-outline-light">Browse Story Types</a>
+          </div>
+        </div>
+ 
+        <div class="hero-book-side">
+          <div class="book-wrap">
+            <img src="hero image.png" alt="Little Life Books — real illustrated spreads" class="hero-img" />
+            <div class="hero-annotation">
+              <span class="hero-annotation-text">Made just<br>for your child</span>
+              <svg class="hero-annotation-arrow" viewBox="0 0 64 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M58,4 C48,8 30,14 14,38" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M14,38 L22,30" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M14,38 L24,40" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+      </svg>
+      Designed by a Board Certified Educational Therapist
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="9" y1="18" x2="15" y2="18"/>
+        <line x1="10" y1="22" x2="14" y2="22"/>
+        <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+      </svg>
+      Rooted in developmental psychology
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+      Used by real families, including our own
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 6 2 18 2 18 9"/>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+        <rect x="6" y="14" width="12" height="8"/>
+      </svg>
+      Print-ready or digital delivery
+    </div>
+  </div>
+ 
+  <!-- MOMENTS -->
+  <section class="moments-section">
+    <div class="container">
+      <div class="moments-inner">
+        <h2 class="moments-headline">Sound familiar?</h2>
+        <div class="moments-rule"></div>
+        <div class="moments-phrase-wrap">
+          <p class="moments-phrase" id="moments-phrase">Bedtime takes an hour of negotiations every night</p>
+        </div>
+        <p class="moments-bridge">That's exactly why we created Little Life Books.</p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- WHY IT WORKS -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-inner">
+        <svg class="why-brain" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50,12 C42,12 32,14 26,22 C18,32 10,42 10,55 C10,72 20,85 38,88 C44,89 48,88 50,88" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M50,12 C58,12 68,14 74,22 C82,32 90,42 90,55 C90,72 80,85 62,88 C56,89 52,88 50,88" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M50,12 C49,20 51,28 50,36 C49,44 51,52 50,60 C49,68 51,76 50,88" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M15,50 C20,45 25,55 35,50" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M20,35 C30,30 35,40 45,35" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M18,68 C28,62 38,75 45,65" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M30,22 C38,28 42,15 46,25" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M28,82 C35,75 42,80 46,72" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M40,45 C45,50 48,45 45,55" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M12,55 C18,58 22,52 25,55" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M85,50 C80,45 75,55 65,50" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M80,35 C70,30 65,40 55,35" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M82,68 C72,62 62,75 55,65" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M70,22 C62,28 58,15 54,25" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M72,82 C65,75 58,80 54,72" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M60,45 C55,50 52,45 55,55" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M88,55 C82,58 78,52 75,55" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+        <div class="why-text">
+          <span class="eyebrow">Here's why it works</span>
+          <p class="why-quote">The idea is simple: <strong>children's brains don't sharply distinguish between a vividly imagined experience and a real one.</strong> Read the story tonight — and the dentist, the first day of school, the new baby already feels like somewhere they've been.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- STORY CATEGORIES -->
+  <section class="categories-section" id="stories">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Story Types</span>
+        <h2 class="section-title">What's coming up for your child?</h2>
+        <p class="section-body">A little preparation can make a big moment feel manageable.</p>
+      </div>
+ 
+      <div class="cat-columns">
+ 
+        <div class="cat-col">
+          <div class="cat-col-header">
+            <svg class="cat-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <span class="cat-col-title">Bedtime &amp; Separation</span>
+          </div>
+          <ul class="cat-col-list">
+            <li><a href="#pricing">Daddy does bedtime</a></li>
+            <li><a href="#pricing">Learning to fall asleep alone</a></li>
+            <li><a href="#pricing">Separation anxiety at night</a></li>
+            <li><a href="#pricing">Moving to a new bed</a></li>
+          </ul>
+        </div>
+ 
+        <div class="cat-col">
+          <div class="cat-col-header">
+            <svg class="cat-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="12" y1="12" x2="12" y2="12"/><path d="M8 12h8"/></svg>
+            <span class="cat-col-title">School &amp; Childcare</span>
+          </div>
+          <ul class="cat-col-list">
+            <li><a href="#pricing">Starting daycare</a></li>
+            <li><a href="#pricing">First day of preschool</a></li>
+            <li><a href="#pricing">School drop-off anxiety</a></li>
+            <li><a href="#pricing">Starting a new activity</a></li>
+          </ul>
+        </div>
+ 
+        <div class="cat-col">
+          <div class="cat-col-header">
+            <svg class="cat-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="cat-col-title">Big Feelings &amp; Changes</span>
+          </div>
+          <ul class="cat-col-list">
+            <li><a href="#pricing">New baby at home</a></li>
+            <li><a href="#pricing">Big feelings</a></li>
+            <li><a href="#pricing">Leaving playdates</a></li>
+            <li><a href="#pricing">Changes at home</a></li>
+          </ul>
+        </div>
+ 
+        <div class="cat-col">
+          <div class="cat-col-header">
+            <svg class="cat-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span class="cat-col-title">Big Firsts</span>
+          </div>
+          <ul class="cat-col-list">
+            <li><a href="#pricing">First airplane ride</a></li>
+            <li><a href="#pricing">First haircut</a></li>
+            <li><a href="#pricing">First sleepover</a></li>
+            <li><a href="#pricing">Starting a new school</a></li>
+          </ul>
+        </div>
+ 
+        <div class="cat-col">
+          <div class="cat-col-header">
+            <svg class="cat-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span class="cat-col-title">Medical &amp; Health</span>
+          </div>
+          <ul class="cat-col-list">
+            <li><a href="#pricing">First dentist visit</a></li>
+            <li><a href="#pricing">Doctor's appointment</a></li>
+            <li><a href="#pricing">Getting a vaccine</a></li>
+            <li><a href="#pricing">Going to the hospital</a></li>
+          </ul>
+        </div>
+ 
+      </div>
+ 
+      <div class="cat-see-all">
+        <a href="#pricing" class="btn btn-outline-terra">View All 30+ Story Types</a>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Process</span>
+        <h2 class="section-title">From your family to their story<br/>in 3–5 days</h2>
+        <p class="section-body">You know your child better than anyone. We take what you share and turn it into something they'll ask to hear again and again.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Tell us about your child</div>
+          <p class="step-text">A quick form about their world and what they're preparing for.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">We create their story</div>
+          <p class="step-text">Personalized, illustrated, and designed just for them.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">A book that's truly theirs</div>
+          <p class="step-text">Ready to read before the moment arrives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- TESTIMONIAL -->
+  <section class="testimonial-section">
+    <div class="container">
+      <div class="testimonial-inner">
+        <div class="testimonial-mark">&ldquo;</div>
+        <p class="testimonial-quote">That was so sweet, it brought me to tears. With my son being autistic, routine is everything. Laying it out in a book with his own name is so helpful. I'm 100% going to print it out.</p>
+        <p class="testimonial-cite"><strong>— Kim F.</strong> &nbsp;·&nbsp; Early customer, mother of a 4-year-old</p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- SCIENCE -->
+  <section class="science-section" id="science">
+    <div class="container">
+      <div class="science-grid">
+ 
+        <div class="science-text">
+          <span class="eyebrow sage">The Science</span>
+          <h2 class="section-title" style="text-align:left;">Why this works</h2>
+          <p>The idea is simple: when children can picture an experience ahead of time, it stops feeling so unknown.</p>
+          <p>Read the story tonight — and tomorrow feels more familiar, more predictable, and easier to handle.</p>
+          <p>These stories are rooted in research used in education and therapy to reduce anxiety and build confidence.</p>
+          <p>This isn't just for children who struggle — every child benefits from knowing what to expect.</p>
+          <div class="science-credential">
+            <div class="science-credential-icon">🎓</div>
+            <div class="science-credential-text">
+              <strong>Designed by Kristina Ashburne, BCET</strong>
+              Board Certified Educational Therapist — and a parent who built the first story for her own daughter.
+            </div>
+          </div>
+        </div>
+ 
+        <div class="science-pillars">
+          <div class="pillar">
+            <div class="pillar-title">Social Story Method</div>
+            <p class="pillar-text">Stories help children mentally "practice" what's coming — so the real experience feels more familiar.</p>
+          </div>
+          <div class="pillar sage">
+            <div class="pillar-title">Attachment &amp; Safety</div>
+            <p class="pillar-text">A warm, predictable story helps children feel safe — so they can approach new experiences with confidence.</p>
+          </div>
+          <div class="pillar gold">
+            <div class="pillar-title">Big Feelings, Made Manageable</div>
+            <p class="pillar-text">Predictability and narrative help children understand and regulate their emotions.</p>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- SAMPLE PAGES -->
+  <section class="sample-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Real Stories</span>
+        <h2 class="section-title">A glimpse inside</h2>
+        <p class="section-body">These aren't templates with a name swapped in. Every page reflects the child's actual world.</p>
+      </div>
+ 
+      <div class="sample-books">
+        <div class="sample-page">
+          <div class="sample-page-img" style="background: linear-gradient(135deg, #F5E0D0, #DEC8B0);"></div>
+          <div class="sample-page-text">
+            <div class="sample-story-name">Noah Goes to Sleep</div>
+            <p class="sample-page-copy">"Noah has his milk and climbs into bed with Daddy. His weighted Elmo is already there, along with his white and baby blue striped blanket."</p>
+          </div>
+        </div>
+        <div class="sample-page">
+          <div class="sample-page-img" style="background: linear-gradient(135deg, #D8E8D0, #C0D8B8);"></div>
+          <div class="sample-page-text">
+            <div class="sample-story-name">Emma's Plane Ride</div>
+            <p class="sample-page-copy">"Then we'll walk through a hallway called the jet bridge — it's like a long tunnel that leads us right onto the plane!"</p>
+          </div>
+        </div>
+        <div class="sample-page">
+          <div class="sample-page-img" style="background: linear-gradient(135deg, #E8D8F0, #D0C0E0);"></div>
+          <div class="sample-page-text">
+            <div class="sample-story-name">Emery Naps in Oregon</div>
+            <p class="sample-page-copy">"Even in a new place, she can fall asleep all by herself. Emery is strong. Emery can do it."</p>
+          </div>
+        </div>
+        <div class="sample-page">
+          <div class="sample-page-img" style="background: linear-gradient(135deg, #F0E8D0, #E0D0B8);"></div>
+          <div class="sample-page-text">
+            <div class="sample-story-name">Rory &amp; Camila Go to Sleep</div>
+            <p class="sample-page-copy">"Camila feels wiggly, her legs can't be still — but she takes a deep breath and hugs her bear, feeling safe knowing Rory is right there."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- FOUNDER -->
+  <section class="founder-section">
+    <div class="container">
+      <div class="founder-inner">
+        <div class="founder-photo">Your photo here</div>
+        <div class="founder-text">
+          <span class="eyebrow">Behind the Book</span>
+          <h2 class="section-title" style="text-align:left; margin-bottom:28px;">Created by a therapist.<br/>Tested on my own daughter.</h2>
+ 
+          <p>I'm Kristina — a Board Certified Educational Therapist and a mom. This didn't start as a business. It started at home with my one-year-old.</p>
+          <p>I work from home, often in the evenings. And every time I went upstairs, she would fall apart when my husband stepped in. Even though she was safe, it felt like too much, too fast.</p>
+          <p>So I tried something I'd used for years with my students: a simple social story. We made a little book about what would happen.</p>
+          <p>Mommy gives a hug. Mommy goes upstairs. You can still hear her talking. Daddy stays with you. Then Mommy comes back.</p>
+          <p>We read it together — and everything changed. She wasn't surprised anymore. She knew what to expect. It felt familiar.</p>
+          <p>So we made another. One for her first airplane ride. One for the doctor. One for sleeping somewhere new.</p>
+          <p>Each time, the same thing happened: what felt big started to feel manageable. That's where Little Life Books began.</p>
+ 
+          <div class="founder-sig">
+            <div class="founder-sig-name">Kristina Ashburne</div>
+            <div class="founder-sig-title">Board Certified Educational Therapist · Founder, Little Life Books</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Pricing</span>
+        <h2 class="section-title">Simple, honest pricing</h2>
+        <p class="section-body">Every book is custom-built for your family. Start with the digital story, then choose what fits.</p>
+      </div>
+ 
+      <p class="pricing-bridge">Most families start with one story — and come back for more.</p>
+ 
+      <!-- Primary offer -->
+      <div class="pricing-main">
+        <span class="pricing-main-label">Start with your story</span>
+        <div>
+          <span class="pricing-main-price">$45</span><span class="pricing-main-format">— Digital</span>
+        </div>
+        <p class="pricing-main-desc">A beautiful, fully personalized storybook you can read tonight.</p>
+        <div class="pricing-main-divider"></div>
+        <ul class="pricing-main-features">
+          <li>Fully personalized illustrated storybook</li>
+          <li>Print-ready PDF delivered by email</li>
+          <li>Ready in 3–5 business days</li>
+        </ul>
+        <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;">Create Your Child's Story →</a>
+      </div>
+ 
+      <!-- Add-ons -->
+      <div class="pricing-addons">
+        <div class="pricing-addon">
+          <div class="pricing-addon-delta">+$10</div>
+          <span class="pricing-addon-sublabel">Editable version</span>
+          <div class="pricing-addon-title">Make it editable</div>
+          <p class="pricing-addon-desc">Update the story as your child grows.</p>
+        </div>
+        <div class="pricing-addon">
+          <div class="pricing-addon-delta">+$30</div>
+          <span class="pricing-addon-sublabel">Printed book</span>
+          <div class="pricing-addon-title">Turn it into a keepsake</div>
+          <p class="pricing-addon-desc">A professionally printed copy for their shelf.</p>
+        </div>
+      </div>
+ 
+      <p style="text-align:center; margin-top:32px; font-size:0.84rem; color:var(--warm-gray);">
+        Need more than one story? Bundles of 2 or 3 are available — <a href="#" style="color:var(--terra); text-decoration:none;">contact us</a>.
+      </p>
+    </div>
+  </section>
+ 
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-blob-1"></div>
+        <div class="cta-blob-2"></div>
+        <div class="cta-inner">
+          <h2 class="cta-headline">Every child deserves a story<br/>that says: I see you.</h2>
+          <p class="cta-sub">Their real name. Their real family. Their real world.</p>
+          <a href="#pricing" class="btn btn-primary" style="font-size:1rem; padding:18px 40px;">Start Their Story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Little Life Books</div>
+        <p class="footer-tagline">A story about their real life,<br/>before they live it.</p>
+        <p class="footer-desc">Personalized illustrated storybooks designed by a Board Certified Educational Therapist and rooted in developmental psychology.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Stories</div>
+        <ul class="footer-links">
+          <li><a href="#">Bedtime Routine</a></li>
+          <li><a href="#">Starting School</a></li>
+          <li><a href="#">New Baby</a></li>
+          <li><a href="#">First Airplane</a></li>
+          <li><a href="#">All Story Types</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Learn</div>
+        <ul class="footer-links">
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">The Science</a></li>
+          <li><a href="#">About Kristina</a></li>
+          <li><a href="#">Sample Pages</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Order</div>
+        <ul class="footer-links">
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Gift a Story</a></li>
+          <li><a href="#">Bundle &amp; Save</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Little Life Books · Designed by Kristina Ashburne, BCET</p>
+      <p>Privacy Policy &nbsp;·&nbsp; Terms &nbsp;·&nbsp; kristina@inclusiveedu.com</p>
+    </div>
+  </footer>
+ 
+  <script>
+    (function () {
+      const phrases = [
+        "Bedtime takes an hour of negotiations every night",
+        "The dentist is tomorrow and you're already dreading it",
+        "She cries at every drop-off and you don't know how to help",
+        "A new baby is coming and your toddler doesn't understand yet",
+        "He's never slept anywhere but home",
+        "Starting school feels big — for both of you"
+      ];
+      const el = document.getElementById('moments-phrase');
+      if (!el) return;
+      let idx = 0;
+ 
+      function cycle() {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(-10px)';
+ 
+        setTimeout(function () {
+          idx = (idx + 1) % phrases.length;
+          el.textContent = phrases[idx];
+          el.style.transition = 'none';
+          el.style.transform = 'translateY(10px)';
+ 
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+              el.style.opacity = '1';
+              el.style.transform = 'translateY(0)';
+            });
+          });
+        }, 580);
+      }
+ 
+      el.textContent = phrases[0];
+      setInterval(cycle, 3400);
+    })();
+  </script>
+</body>
+</html>
+ 
