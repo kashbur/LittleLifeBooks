@@ -1,0 +1,1571 @@
+{
+  "questionnaire": {
+    "id": "starting_preschool_life_map",
+    "title": "Starting Preschool Life Map",
+    "purpose": "Collect only the details that meaningfully personalize a preschool preparation story: routine, relationships, worries, language, visuals, emotional arc, and coping strategies.",
+    "tone": "Warm, expert-guided, conversational, and concise. The parent should feel supported by a child development and educational therapy lens, not screened by a generic form.",
+    "designPrinciples": [
+      "Use a multi-step flow with 1 to 3 questions per screen.",
+      "Ask required questions early only when they shape the story globally.",
+      "Use branching to avoid asking about concerns that do not apply.",
+      "Prefer concrete story-making details over broad clinical history.",
+      "Avoid false reassurance. Only include promises that are true and safe.",
+      "Normalize mixed feelings while emphasizing routine, trusted adults, coping tools, and return."
+    ],
+    "questionTypes": [
+      "text",
+      "textarea",
+      "single_select",
+      "multi_select",
+      "photo_upload",
+      "date",
+      "boolean"
+    ]
+  },
+  "globalBranchingRules": [
+    {
+      "id": "show_separation_followups",
+      "if": {
+        "questionId": "main_concerns",
+        "containsAny": ["separation_from_parent", "fear_of_being_left"]
+      },
+      "thenShow": ["separation_child_response", "safe_reassurance", "returning_adult", "what_not_to_promise"]
+    },
+    {
+      "id": "show_teacher_followups",
+      "if": {
+        "questionId": "main_concerns",
+        "contains": "new_teacher"
+      },
+      "thenShow": ["teacher_familiarity", "teacher_help_language"]
+    },
+    {
+      "id": "show_friend_followups",
+      "if": {
+        "questionId": "main_concerns",
+        "contains": "making_friends"
+      },
+      "thenShow": ["friendship_style", "joining_play_support"]
+    },
+    {
+      "id": "show_bathroom_followups",
+      "if": {
+        "questionId": "main_concerns",
+        "contains": "using_bathroom"
+      },
+      "thenShow": ["bathroom_wording", "bathroom_help_needed", "school_bathroom_routine"]
+    },
+    {
+      "id": "show_sensory_followups",
+      "if": {
+        "questionId": "main_concerns",
+        "contains": "loud_classroom"
+      },
+      "thenShow": ["sensory_sensitivity", "noise_supports"]
+    },
+    {
+      "id": "show_routine_followups",
+      "if": {
+        "questionId": "main_concerns",
+        "contains": "not_knowing_routine"
+      },
+      "thenShow": ["routine_preview_priority", "transition_supports"]
+    },
+    {
+      "id": "show_food_followups",
+      "if": {
+        "questionId": "main_concerns",
+        "contains": "eating_lunch_snack"
+      },
+      "thenShow": ["food_routine_details", "food_supports"]
+    },
+    {
+      "id": "show_rest_followups",
+      "if": {
+        "questionId": "main_concerns",
+        "contains": "nap_rest_time"
+      },
+      "thenShow": ["rest_habit", "rest_comforts"]
+    },
+    {
+      "id": "show_directions_followups",
+      "if": {
+        "questionId": "main_concerns",
+        "contains": "following_directions"
+      },
+      "thenShow": ["direction_supports", "help_request_language"]
+    },
+    {
+      "id": "skip_concern_branches",
+      "if": {
+        "questionId": "main_concerns",
+        "contains": "no_worries_expressed"
+      },
+      "thenShow": ["parent_hidden_concerns"],
+      "thenSkip": [
+        "separation_child_response",
+        "teacher_familiarity",
+        "friendship_style",
+        "bathroom_help_needed",
+        "sensory_sensitivity",
+        "routine_preview_priority",
+        "food_routine_details",
+        "rest_habit",
+        "direction_supports"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "child_basics",
+      "label": "Child Basics",
+      "questions": [
+        {
+          "id": "child_name",
+          "section": "Child Basics",
+          "question": "What name should we use for your child in the story?",
+          "helperText": "This anchors the story in your child's real identity and helps the narration feel familiar.",
+          "type": "text",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Used as the main character name throughout the story.",
+          "illustrationImpact": "Used for any name labels, cubby tags, backpack labels, or title page personalization.",
+          "therapeuticPurpose": "Creates immediate self-recognition and ownership of the preschool story."
+        },
+        {
+          "id": "child_age",
+          "section": "Child Basics",
+          "question": "How old is your child?",
+          "helperText": "Age helps us choose developmentally appropriate language, pacing, and coping strategies.",
+          "type": "single_select",
+          "options": ["2", "3", "4", "5", "6"],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Adjusts sentence length, independence expectations, and emotional language.",
+          "illustrationImpact": "Guides approximate body proportions and preschool-age visual details.",
+          "therapeuticPurpose": "Keeps the story aligned with the child's developmental stage."
+        },
+        {
+          "id": "pronouns",
+          "section": "Child Basics",
+          "question": "What pronouns should the story use for your child?",
+          "helperText": "We want the story to sound natural and respectful to your family.",
+          "type": "single_select",
+          "options": ["she/her", "he/him", "they/them", "use child's name only", "other"],
+          "required": true,
+          "branchingLogic": "If 'other', show pronouns_custom.",
+          "storyImpact": "Controls narration and adult dialogue.",
+          "illustrationImpact": "No direct visual impact unless paired with photo references.",
+          "therapeuticPurpose": "Supports identity safety and accurate family language."
+        },
+        {
+          "id": "pronouns_custom",
+          "section": "Child Basics",
+          "question": "What pronouns or wording should we use?",
+          "helperText": "Share the exact wording you prefer.",
+          "type": "text",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Shown only if pronouns = other.",
+          "storyImpact": "Used in all narration and dialogue.",
+          "illustrationImpact": "No direct visual impact.",
+          "therapeuticPurpose": "Ensures respectful, consistent language."
+        },
+        {
+          "id": "preschool_start_date",
+          "section": "Child Basics",
+          "question": "When does preschool start?",
+          "helperText": "The story can gently build toward a real date or stay more general if the date is not set.",
+          "type": "date",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "May add a countdown or 'soon' language.",
+          "illustrationImpact": "Can influence calendar visuals.",
+          "therapeuticPurpose": "Reduces uncertainty by giving the transition a clear time frame."
+        },
+        {
+          "id": "prior_group_care",
+          "section": "Child Basics",
+          "question": "Has your child been in daycare, preschool, or another group care setting before?",
+          "helperText": "This helps us know whether preschool is completely new or a familiar kind of experience.",
+          "type": "single_select",
+          "options": ["first_group_care", "some_daycare_or_classes", "previous_preschool", "not_sure"],
+          "required": true,
+          "branchingLogic": "If first_group_care, emphasize novelty and extra routine preview. If previous_preschool, ask prior_experience_notes.",
+          "storyImpact": "Adjusts whether the story frames preschool as a first-time experience or a new version of something familiar.",
+          "illustrationImpact": "May include comparison imagery such as home-to-school or old-classroom-to-new-classroom.",
+          "therapeuticPurpose": "Allows the story to meet the child at the right level of novelty."
+        },
+        {
+          "id": "prior_experience_notes",
+          "section": "Child Basics",
+          "question": "Is there anything from that prior experience we should know?",
+          "helperText": "Briefly share what went well or what felt hard so we can build on it carefully.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Shown if prior_group_care = previous_preschool or some_daycare_or_classes.",
+          "storyImpact": "Can reference strengths or avoid repeating difficult framing.",
+          "illustrationImpact": "Usually none unless a specific familiar item or setting is mentioned.",
+          "therapeuticPurpose": "Uses past experience to support continuity and repair."
+        }
+      ]
+    },
+    {
+      "id": "child_personality",
+      "label": "Child Personality",
+      "questions": [
+        {
+          "id": "temperament",
+          "section": "Child Personality",
+          "question": "Which description sounds most like your child in new situations?",
+          "helperText": "Temperament helps us choose the right emotional arc: slow warm-up, eager explorer, observer first, or flexible joiner.",
+          "type": "single_select",
+          "options": ["slow_to_warm", "eager_and_curious", "watchful_observer", "flexible_once_started", "depends_on_the_day"],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Sets the starting emotional state and pacing of confidence-building.",
+          "illustrationImpact": "Guides facial expressions and body language across early pages.",
+          "therapeuticPurpose": "Validates the child's natural approach instead of forcing bravery too quickly."
+        },
+        {
+          "id": "social_style",
+          "section": "Child Personality",
+          "question": "How does your child usually approach other children?",
+          "helperText": "This helps us write friendship moments that feel believable.",
+          "type": "single_select",
+          "options": ["jumps_right_in", "watches_first", "prefers_one_friend", "plays_near_others", "often_needs_adult_help", "varies"],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Shapes peer interaction scenes and joining-play language.",
+          "illustrationImpact": "Determines whether the child is shown nearby, joining, watching, or playing with one peer.",
+          "therapeuticPurpose": "Supports social confidence without implying one correct way to make friends."
+        },
+        {
+          "id": "sensitivity_level",
+          "section": "Child Personality",
+          "question": "How sensitive is your child to noise, crowds, clothing, smells, or busy spaces?",
+          "helperText": "Preschool can be sensory-rich. This helps us include supports if needed.",
+          "type": "single_select",
+          "options": ["not_very_sensitive", "somewhat_sensitive", "very_sensitive", "sensory_seeking", "not_sure"],
+          "required": true,
+          "branchingLogic": "If somewhat_sensitive, very_sensitive, or sensory_seeking, show sensory_sensitivity and sensory_needs.",
+          "storyImpact": "Adds sensory-aware descriptions and coping choices.",
+          "illustrationImpact": "May show quieter corners, headphones, fidgets, or calm spaces.",
+          "therapeuticPurpose": "Prepares for sensory load and gives the child language for regulation."
+        },
+        {
+          "id": "favorite_interests",
+          "section": "Child Personality",
+          "question": "What does your child love right now?",
+          "helperText": "Favorite interests make the story feel like it was written for your child, not about any child.",
+          "type": "textarea",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Adds motivating details, metaphors, play scenes, and page-specific personalization.",
+          "illustrationImpact": "May include favorite colors, toys, topics, animals, characters, vehicles, or pretend play themes.",
+          "therapeuticPurpose": "Uses familiar joy as an emotional bridge into an unfamiliar setting."
+        },
+        {
+          "id": "makes_child_laugh",
+          "section": "Child Personality",
+          "question": "What usually makes your child laugh?",
+          "helperText": "A small moment of humor can help the story feel warm and emotionally safe.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Adds a playful beat during a neutral or mildly stressful scene.",
+          "illustrationImpact": "May inspire a silly expression, playful object, or funny classroom moment.",
+          "therapeuticPurpose": "Pairs the preschool setting with positive affect and connection."
+        }
+      ]
+    },
+    {
+      "id": "main_preschool_concerns",
+      "label": "Main Preschool Concerns",
+      "questions": [
+        {
+          "id": "main_concerns",
+          "section": "Main Preschool Concerns",
+          "question": "What feels hardest or most uncertain about preschool right now?",
+          "helperText": "Choose anything that applies. We will only ask follow-up questions for the areas you select.",
+          "type": "multi_select",
+          "options": [
+            "separation_from_parent",
+            "new_teacher",
+            "making_friends",
+            "using_bathroom",
+            "loud_classroom",
+            "not_knowing_routine",
+            "eating_lunch_snack",
+            "nap_rest_time",
+            "following_directions",
+            "fear_of_being_left",
+            "no_worries_expressed"
+          ],
+          "required": true,
+          "branchingLogic": "Controls all concern-specific follow-up screens. If no_worries_expressed is selected, hide the other follow-up branches unless the parent also selects a concern.",
+          "storyImpact": "Defines the central emotional challenge and resolution arc.",
+          "illustrationImpact": "Determines which preschool scenes need emphasis.",
+          "therapeuticPurpose": "Targets the story toward the child's most meaningful uncertainty."
+        },
+        {
+          "id": "parent_hidden_concerns",
+          "section": "Main Preschool Concerns",
+          "question": "Is there anything you are quietly wondering about, even if your child has not mentioned it?",
+          "helperText": "Sometimes the story can gently preview a routine before it becomes a worry.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes no_worries_expressed.",
+          "storyImpact": "May add subtle preparation without labeling the child as worried.",
+          "illustrationImpact": "May influence which routine scenes appear.",
+          "therapeuticPurpose": "Allows proactive preparation without projecting anxiety onto the child."
+        },
+        {
+          "id": "teacher_familiarity",
+          "section": "Main Preschool Concerns",
+          "question": "Has your child met or seen the teacher yet?",
+          "helperText": "This helps us decide whether the teacher should be introduced as familiar or new.",
+          "type": "single_select",
+          "options": ["yes_met_in_person", "seen_photo_or_video", "heard_name_only", "not_yet"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes new_teacher.",
+          "storyImpact": "Shapes teacher introduction language.",
+          "illustrationImpact": "May include teacher photo reference if available.",
+          "therapeuticPurpose": "Builds predictability around a new trusted adult."
+        },
+        {
+          "id": "teacher_help_language",
+          "section": "Main Preschool Concerns",
+          "question": "What would you like the story to show the teacher helping with?",
+          "helperText": "Children often feel safer when they know exactly how a teacher can help.",
+          "type": "multi_select",
+          "options": ["finding_cubby", "saying_goodbye", "bathroom", "joining_play", "opening_food", "rest_time", "big_feelings", "asking_for_help"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes new_teacher.",
+          "storyImpact": "Adds teacher support scenes and dialogue.",
+          "illustrationImpact": "Shows the teacher near the child in concrete helpful moments.",
+          "therapeuticPurpose": "Transfers some safety from caregiver to teacher."
+        },
+        {
+          "id": "friendship_style",
+          "section": "Main Preschool Concerns",
+          "question": "What part of making friends might feel hardest?",
+          "helperText": "Friendship support is most useful when it matches the actual social challenge.",
+          "type": "single_select",
+          "options": ["shy_or_slow_to_join", "does_not_know_what_to_say", "worries_others_will_not_play", "prefers_adults", "gets_excited_and_needs_help", "not_sure"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes making_friends.",
+          "storyImpact": "Creates a realistic peer moment and success step.",
+          "illustrationImpact": "May show parallel play, one friend, group play, or adult-supported entry.",
+          "therapeuticPurpose": "Gives the child a concrete, non-pressured way to connect."
+        },
+        {
+          "id": "joining_play_support",
+          "section": "Main Preschool Concerns",
+          "question": "What words could your child practice for joining play?",
+          "helperText": "A simple script can make social entry feel less mysterious.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes making_friends.",
+          "storyImpact": "Adds child-friendly dialogue such as 'Can I play?' or 'What are you building?'",
+          "illustrationImpact": "Shows the child using words or gestures to join.",
+          "therapeuticPurpose": "Builds social problem-solving and reduces uncertainty."
+        },
+        {
+          "id": "bathroom_help_needed",
+          "section": "Main Preschool Concerns",
+          "question": "What kind of bathroom help might your child need at school?",
+          "helperText": "We can keep this matter-of-fact and reassuring.",
+          "type": "multi_select",
+          "options": ["reminder_to_go", "help_with_clothes", "help_wiping", "help_finding_bathroom", "privacy_reassurance", "accident_reassurance", "no_help_needed"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes using_bathroom.",
+          "storyImpact": "Adds practical bathroom routine and help-request language.",
+          "illustrationImpact": "May show bathroom doorway, handwashing, or teacher nearby without exposing private details.",
+          "therapeuticPurpose": "Reduces shame and uncertainty around toileting."
+        },
+        {
+          "id": "school_bathroom_routine",
+          "section": "Main Preschool Concerns",
+          "question": "What do you know about the school bathroom routine?",
+          "helperText": "Even small details can help the story preview what will happen.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes using_bathroom.",
+          "storyImpact": "Adds accurate sequence around asking, going, flushing, washing, and returning.",
+          "illustrationImpact": "May show sink, handwashing, or bathroom location.",
+          "therapeuticPurpose": "Turns an uncertain private task into a predictable routine."
+        },
+        {
+          "id": "sensory_sensitivity",
+          "section": "Main Preschool Concerns",
+          "question": "Which sensory experiences are most likely to bother or overwhelm your child?",
+          "helperText": "This helps us include the right supports without making the classroom sound scary.",
+          "type": "multi_select",
+          "options": ["loud_noise", "many_children_talking", "music_or_singing", "bright_lights", "messy_play", "food_smells", "clothing_or_tags", "crowded_transitions", "not_sure"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes loud_classroom or sensitivity_level indicates sensory concern.",
+          "storyImpact": "Adds sensory-aware narration and coping options.",
+          "illustrationImpact": "May show quieter area, headphones, teacher support, or distance from noise.",
+          "therapeuticPurpose": "Validates sensory needs and gives the child a plan."
+        },
+        {
+          "id": "noise_supports",
+          "section": "Main Preschool Concerns",
+          "question": "What helps when things get too loud or busy?",
+          "helperText": "We can build the child's actual regulation tools into the preschool scene.",
+          "type": "multi_select",
+          "options": ["covering_ears", "headphones", "quiet_corner", "deep_breaths", "holding_object", "teacher_check_in", "short_break", "not_sure_yet"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes loud_classroom.",
+          "storyImpact": "Adds coping sequence during a busy classroom moment.",
+          "illustrationImpact": "Shows specific support tools or calm space.",
+          "therapeuticPurpose": "Supports self-advocacy and nervous-system regulation."
+        },
+        {
+          "id": "routine_preview_priority",
+          "section": "Main Preschool Concerns",
+          "question": "Which parts of the preschool day would be most helpful to preview?",
+          "helperText": "Some children feel calmer when they can picture the order of the day.",
+          "type": "multi_select",
+          "options": ["arrival", "cubby_backpack", "circle_time", "free_play", "snack_lunch", "bathroom", "outside_play", "rest_time", "cleanup", "pickup"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes not_knowing_routine.",
+          "storyImpact": "Determines which routine beats receive extra page space.",
+          "illustrationImpact": "Guides key scene selection.",
+          "therapeuticPurpose": "Creates predictability and reduces cognitive load."
+        },
+        {
+          "id": "transition_supports",
+          "section": "Main Preschool Concerns",
+          "question": "What helps your child move from one activity to another?",
+          "helperText": "Transitions are often where preschool feels hardest.",
+          "type": "multi_select",
+          "options": ["warnings", "visual_schedule", "song", "timer", "teacher_prompt", "holding_hands", "first_then_language", "not_sure"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes not_knowing_routine or following_directions.",
+          "storyImpact": "Adds transition language and classroom rhythm.",
+          "illustrationImpact": "May show visual schedule, timer, or teacher cue.",
+          "therapeuticPurpose": "Supports flexibility and preparedness."
+        },
+        {
+          "id": "food_routine_details",
+          "section": "Main Preschool Concerns",
+          "question": "What should we know about snack or lunch?",
+          "helperText": "Food routines can involve independence, sensory preferences, allergies, or comfort from home.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes eating_lunch_snack.",
+          "storyImpact": "Adds accurate lunch/snack expectations and reassurance.",
+          "illustrationImpact": "May include lunchbox, water bottle, or preferred foods.",
+          "therapeuticPurpose": "Reduces uncertainty around eating away from home."
+        },
+        {
+          "id": "food_supports",
+          "section": "Main Preschool Concerns",
+          "question": "What help might your child need with food or drinks?",
+          "helperText": "Small practical supports can prevent a worry from becoming the center of the day.",
+          "type": "multi_select",
+          "options": ["opening_containers", "remembering_to_eat", "trying_school_food", "allergy_safety", "finding_lunchbox", "asking_for_help", "no_support_needed"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes eating_lunch_snack.",
+          "storyImpact": "Adds help-seeking and independence moments.",
+          "illustrationImpact": "Shows lunchbox, containers, table, or teacher support.",
+          "therapeuticPurpose": "Builds confidence around self-care routines."
+        },
+        {
+          "id": "rest_habit",
+          "section": "Main Preschool Concerns",
+          "question": "How does your child usually handle nap or rest time?",
+          "helperText": "Rest time can be easy, unfamiliar, or emotionally loaded.",
+          "type": "single_select",
+          "options": ["usually_naps", "rests_but_does_not_sleep", "does_not_like_rest", "needs_help_settling", "not_part_of_school_day", "not_sure"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes nap_rest_time.",
+          "storyImpact": "Sets expectations for rest without requiring sleep.",
+          "illustrationImpact": "May show mat, blanket, quiet book, dim room, or calm teacher.",
+          "therapeuticPurpose": "Separates resting from pressure to sleep and supports body calm."
+        },
+        {
+          "id": "rest_comforts",
+          "section": "Main Preschool Concerns",
+          "question": "What helps your child feel calm during rest?",
+          "helperText": "We can include real comforts if the school allows them.",
+          "type": "multi_select",
+          "options": ["blanket", "stuffed_animal", "quiet_music", "back_rub", "book", "teacher_check_in", "family_phrase", "nothing_specific"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes nap_rest_time.",
+          "storyImpact": "Adds rest-time coping tools and reassurance.",
+          "illustrationImpact": "Shows comfort object or rest setup.",
+          "therapeuticPurpose": "Supports co-regulation and quiet-body practice."
+        },
+        {
+          "id": "direction_supports",
+          "section": "Main Preschool Concerns",
+          "question": "What helps your child follow directions?",
+          "helperText": "This lets the story show support rather than scolding.",
+          "type": "multi_select",
+          "options": ["one_step_at_a_time", "visual_cues", "modeling", "gentle_reminders", "first_then_language", "extra_processing_time", "movement_break", "not_sure"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes following_directions.",
+          "storyImpact": "Adds teacher prompts and child success moments.",
+          "illustrationImpact": "May show visual cues, teacher modeling, or child following a simple step.",
+          "therapeuticPurpose": "Frames compliance as skill-building and support."
+        },
+        {
+          "id": "help_request_language",
+          "section": "Main Preschool Concerns",
+          "question": "What words should the story give your child for asking for help?",
+          "helperText": "A simple phrase can make adult support feel reachable.",
+          "type": "text",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes following_directions, new_teacher, bathroom, or eating_lunch_snack.",
+          "storyImpact": "Adds repeated help-seeking phrase.",
+          "illustrationImpact": "May show child speaking to teacher.",
+          "therapeuticPurpose": "Builds self-advocacy and reduces helplessness."
+        }
+      ]
+    },
+    {
+      "id": "separation_dropoff",
+      "label": "Separation & Drop-Off",
+      "questions": [
+        {
+          "id": "dropoff_person",
+          "section": "Separation & Drop-Off",
+          "question": "Who will usually drop your child off at preschool?",
+          "helperText": "Drop-off is often the most important emotional moment in the story.",
+          "type": "text",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Identifies the adult in the goodbye scene.",
+          "illustrationImpact": "Guides which caregiver appears at arrival.",
+          "therapeuticPurpose": "Makes the separation scene concrete and emotionally truthful."
+        },
+        {
+          "id": "dropoff_routine",
+          "section": "Separation & Drop-Off",
+          "question": "What will drop-off probably look like?",
+          "helperText": "Even if the exact routine is not set, share what you know.",
+          "type": "textarea",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Creates the arrival and goodbye sequence.",
+          "illustrationImpact": "Shows car line, classroom door, hallway, cubby, or playground arrival.",
+          "therapeuticPurpose": "Reduces uncertainty by previewing the sequence."
+        },
+        {
+          "id": "goodbye_words",
+          "section": "Separation & Drop-Off",
+          "question": "What will you say before leaving?",
+          "helperText": "A consistent goodbye phrase can become a bridge between home and school.",
+          "type": "text",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Used as repeated caregiver dialogue.",
+          "illustrationImpact": "May show hug, wave, high five, or goodbye ritual.",
+          "therapeuticPurpose": "Creates a predictable separation cue."
+        },
+        {
+          "id": "separation_child_response",
+          "section": "Separation & Drop-Off",
+          "question": "What does your child usually do when separating from you?",
+          "helperText": "We can write a scene that validates the real feeling and moves toward support.",
+          "type": "single_select",
+          "options": ["cries_or_clings", "gets_quiet", "asks_repeated_questions", "gets_angry", "runs_to_play", "varies", "not_sure"],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes separation_from_parent or fear_of_being_left.",
+          "storyImpact": "Shapes the emotional peak and adult response.",
+          "illustrationImpact": "Guides facial expression and body posture in goodbye scene.",
+          "therapeuticPurpose": "Normalizes separation responses and models co-regulation."
+        },
+        {
+          "id": "safe_reassurance",
+          "section": "Separation & Drop-Off",
+          "question": "What reassurance is true and safe to include?",
+          "helperText": "We only want to include promises that will reliably happen.",
+          "type": "multi_select",
+          "options": ["grownup_comes_back_after_school", "teacher_will_help", "child_can_miss_parent_and_still_play", "parent_thinks_about_child", "pickup_person_will_arrive", "child_can_ask_for_help"],
+          "required": true,
+          "branchingLogic": "Always shown; extra important if separation concern is selected.",
+          "storyImpact": "Provides core reassurance language.",
+          "illustrationImpact": "May show reunion or teacher support.",
+          "therapeuticPurpose": "Builds trust through truthful, repeatable safety messages."
+        },
+        {
+          "id": "returning_adult",
+          "section": "Separation & Drop-Off",
+          "question": "Who will pick your child up or come back at the end of the school day?",
+          "helperText": "Children often need the return to be named clearly.",
+          "type": "text",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Sets the reunion ending.",
+          "illustrationImpact": "Determines pickup adult illustration.",
+          "therapeuticPurpose": "Reinforces object permanence and the return of trusted adults."
+        },
+        {
+          "id": "what_not_to_promise",
+          "section": "Separation & Drop-Off",
+          "question": "Is there anything we should not promise or say about drop-off?",
+          "helperText": "For example: 'I will stay outside,' 'You will not cry,' or 'I will come right back' unless those are true.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Prevents inaccurate reassurance.",
+          "illustrationImpact": "No direct visual impact.",
+          "therapeuticPurpose": "Protects trust and avoids reassurance that could backfire."
+        }
+      ]
+    },
+    {
+      "id": "preschool_routine",
+      "label": "Preschool Routine",
+      "questions": [
+        {
+          "id": "school_name",
+          "section": "Preschool Routine",
+          "question": "What is the preschool or program called?",
+          "helperText": "A real school name helps the story feel specific and familiar.",
+          "type": "text",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Used in title, narration, or arrival page.",
+          "illustrationImpact": "May appear on school sign or classroom label.",
+          "therapeuticPurpose": "Builds familiarity with the place."
+        },
+        {
+          "id": "teacher_name",
+          "section": "Preschool Routine",
+          "question": "What is the teacher's name, if you know it?",
+          "helperText": "Naming the teacher can make them feel less like a stranger.",
+          "type": "text",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Used in teacher dialogue and reassurance.",
+          "illustrationImpact": "Can pair with teacher photo if uploaded and allowed.",
+          "therapeuticPurpose": "Introduces a trusted school adult."
+        },
+        {
+          "id": "classroom_name",
+          "section": "Preschool Routine",
+          "question": "Does the classroom have a name?",
+          "helperText": "Some children love knowing they are in the Bears Room, Sunflower Room, or another named class.",
+          "type": "text",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Adds classroom-specific wording.",
+          "illustrationImpact": "May appear on a classroom sign.",
+          "therapeuticPurpose": "Makes the new environment easier to picture."
+        },
+        {
+          "id": "arrival_routine",
+          "section": "Preschool Routine",
+          "question": "What happens first when your child arrives?",
+          "helperText": "The first few minutes shape the child's sense of safety.",
+          "type": "textarea",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Builds the opening school sequence.",
+          "illustrationImpact": "Shows classroom entrance, sign-in, cubby, or greeting.",
+          "therapeuticPurpose": "Previews the beginning of the school day."
+        },
+        {
+          "id": "cubby_backpack_location",
+          "section": "Preschool Routine",
+          "question": "Where will your child put their backpack or belongings?",
+          "helperText": "Belongings routines give children a concrete job when they arrive.",
+          "type": "text",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Adds a small competence moment.",
+          "illustrationImpact": "May show cubby, hook, bin, or backpack.",
+          "therapeuticPurpose": "Supports independence and arrival predictability."
+        },
+        {
+          "id": "routine_known_parts",
+          "section": "Preschool Routine",
+          "question": "Which parts of the preschool day should the story include?",
+          "helperText": "Choose what actually happens or is likely to happen.",
+          "type": "multi_select",
+          "options": ["circle_time", "play_time", "snack", "lunch", "bathroom", "outside_play", "art_or_centers", "music", "nap_rest", "cleanup", "pickup"],
+          "required": true,
+          "branchingLogic": "Show detail questions for selected routine parts if not already covered by concern branches.",
+          "storyImpact": "Defines the middle pages of the story.",
+          "illustrationImpact": "Determines major scene list.",
+          "therapeuticPurpose": "Gives the child a mental map of the day."
+        },
+        {
+          "id": "pickup_routine",
+          "section": "Preschool Routine",
+          "question": "What will pickup look like?",
+          "helperText": "The story should end with the real return as clearly as possible.",
+          "type": "textarea",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Creates the reunion ending.",
+          "illustrationImpact": "Shows pickup location and adult.",
+          "therapeuticPurpose": "Reinforces that the child is not left and the day has an ending."
+        }
+      ]
+    },
+    {
+      "id": "comfort_regulation",
+      "label": "Comfort & Regulation",
+      "questions": [
+        {
+          "id": "calming_supports",
+          "section": "Comfort & Regulation",
+          "question": "What helps your child calm when feelings get big?",
+          "helperText": "We can include strategies your child already knows, not introduce too many new ones.",
+          "type": "multi_select",
+          "options": ["hug", "deep_breaths", "counting", "quiet_space", "song", "holding_object", "movement", "squeezing_hands", "adult_words", "needs_space", "not_sure"],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Selects the coping strategy used at the emotional turning point.",
+          "illustrationImpact": "Shows the child using a regulation tool.",
+          "therapeuticPurpose": "Builds concrete self-regulation and co-regulation scripts."
+        },
+        {
+          "id": "comfort_object",
+          "section": "Comfort & Regulation",
+          "question": "Does your child have a comfort object?",
+          "helperText": "A familiar object can be a powerful bridge if it is realistic to include.",
+          "type": "text",
+          "options": [],
+          "required": false,
+          "branchingLogic": "If answered, show comfort_object_school_allowed.",
+          "storyImpact": "May include the object in home, backpack, drop-off, or rest scenes.",
+          "illustrationImpact": "Can be illustrated from photo reference.",
+          "therapeuticPurpose": "Supports transitional object use and emotional continuity."
+        },
+        {
+          "id": "comfort_object_school_allowed",
+          "section": "Comfort & Regulation",
+          "question": "Can this comfort object go to school?",
+          "helperText": "We do not want the story to promise access to something the school will not allow.",
+          "type": "single_select",
+          "options": ["yes_all_day", "yes_in_backpack", "yes_for_rest_only", "no", "not_sure"],
+          "required": true,
+          "branchingLogic": "Shown if comfort_object has an answer.",
+          "storyImpact": "Determines where and how the object appears.",
+          "illustrationImpact": "Places object in hand, backpack, cubby, rest mat, or home-only goodbye ritual.",
+          "therapeuticPurpose": "Keeps comfort plans truthful and usable."
+        },
+        {
+          "id": "breathing_tool",
+          "section": "Comfort & Regulation",
+          "question": "Is there a breathing tool or calming practice your child already knows?",
+          "helperText": "Examples: smell the flower/blow the candle, balloon belly, hand breathing.",
+          "type": "text",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "May include this exact tool during a nervous moment.",
+          "illustrationImpact": "May show gesture or body posture.",
+          "therapeuticPurpose": "Reinforces a familiar regulation strategy."
+        },
+        {
+          "id": "comfort_song_or_phrase",
+          "section": "Comfort & Regulation",
+          "question": "Is there a song, phrase, or small ritual that comforts your child?",
+          "helperText": "Family language can make the story feel emotionally connected.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Can become a repeated refrain or parent note.",
+          "illustrationImpact": "May show gesture or ritual such as kiss on hand.",
+          "therapeuticPurpose": "Creates continuity between caregiver comfort and school coping."
+        },
+        {
+          "id": "sensory_needs",
+          "section": "Comfort & Regulation",
+          "question": "Are there sensory needs or supports we should include?",
+          "helperText": "Share only what would help the story show your child's body feeling safe.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Shown if sensitivity_level indicates sensory concern or main_concerns includes loud_classroom.",
+          "storyImpact": "Adds sensory supports and self-advocacy language.",
+          "illustrationImpact": "May include headphones, chew, fidget, quiet corner, weighted item, or space from crowd.",
+          "therapeuticPurpose": "Affirms sensory needs and builds a realistic support plan."
+        }
+      ]
+    },
+    {
+      "id": "family_trusted_adults",
+      "label": "Family & Trusted Adults",
+      "questions": [
+        {
+          "id": "caregiver_names",
+          "section": "Family & Trusted Adults",
+          "question": "Which caregivers should be named in the story?",
+          "helperText": "Use the names or titles your child actually uses.",
+          "type": "textarea",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Controls family references and dialogue.",
+          "illustrationImpact": "Determines possible caregiver characters.",
+          "therapeuticPurpose": "Connects the child's secure base to the preschool transition."
+        },
+        {
+          "id": "siblings_pets_adults",
+          "section": "Family & Trusted Adults",
+          "question": "Are there siblings, pets, grandparents, or other important people your child may want included?",
+          "helperText": "Include people or pets only if they meaningfully support the story.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "May add home scenes, encouragement, or pickup references.",
+          "illustrationImpact": "Can include family members, pets, or important adults if photos are provided.",
+          "therapeuticPurpose": "Adds attachment figures and familiar emotional anchors."
+        },
+        {
+          "id": "should_appear",
+          "section": "Family & Trusted Adults",
+          "question": "Who should appear in the story?",
+          "helperText": "This helps us keep the cast focused and comforting.",
+          "type": "textarea",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Sets the active character list.",
+          "illustrationImpact": "Guides illustration references and scene composition.",
+          "therapeuticPurpose": "Prioritizes trusted figures who support emotional safety."
+        },
+        {
+          "id": "should_not_appear",
+          "section": "Family & Trusted Adults",
+          "question": "Is there anyone who should not appear or be mentioned?",
+          "helperText": "This protects your child's emotional safety and your family's privacy.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Prevents unwanted references.",
+          "illustrationImpact": "Prevents unwanted visual inclusion.",
+          "therapeuticPurpose": "Avoids sensitive or dysregulating content."
+        }
+      ]
+    },
+    {
+      "id": "language_preferences",
+      "label": "Language Preferences",
+      "questions": [
+        {
+          "id": "caregiver_words",
+          "section": "Language Preferences",
+          "question": "What does your child call their caregivers?",
+          "helperText": "The exact words matter: Mama, Mommy, Dad, Papa, Nana, Gigi, and so on.",
+          "type": "textarea",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Used in dialogue and narration.",
+          "illustrationImpact": "No direct visual impact.",
+          "therapeuticPurpose": "Makes reassurance sound like home."
+        },
+        {
+          "id": "bathroom_wording",
+          "section": "Language Preferences",
+          "question": "What words does your family use for the bathroom or potty?",
+          "helperText": "Using familiar words helps this part feel matter-of-fact.",
+          "type": "text",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Shown if main_concerns includes using_bathroom or routine_known_parts includes bathroom.",
+          "storyImpact": "Controls bathroom wording.",
+          "illustrationImpact": "No direct visual impact.",
+          "therapeuticPurpose": "Reduces embarrassment and improves comprehension."
+        },
+        {
+          "id": "teacher_wording",
+          "section": "Language Preferences",
+          "question": "What should the story call school adults?",
+          "helperText": "For example: teacher, grown-up, Miss Ana, Mr. Lee, helper.",
+          "type": "text",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Controls adult labels in school scenes.",
+          "illustrationImpact": "No direct visual impact.",
+          "therapeuticPurpose": "Builds clear categories for trusted adults."
+        },
+        {
+          "id": "school_wording",
+          "section": "Language Preferences",
+          "question": "What should we call preschool in the story?",
+          "helperText": "Some families say school, preschool, class, little school, or the school name.",
+          "type": "text",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Sets consistent school wording.",
+          "illustrationImpact": "May influence labels.",
+          "therapeuticPurpose": "Keeps the story aligned with the words the child hears at home."
+        },
+        {
+          "id": "family_phrases",
+          "section": "Language Preferences",
+          "question": "Are there any family phrases we should use?",
+          "helperText": "Short, familiar phrases can become powerful story anchors.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "May become refrain, goodbye phrase, or coping phrase.",
+          "illustrationImpact": "No direct visual impact.",
+          "therapeuticPurpose": "Uses familiar language to create emotional safety."
+        },
+        {
+          "id": "words_to_avoid",
+          "section": "Language Preferences",
+          "question": "Are there any words or phrases we should avoid?",
+          "helperText": "Examples: big kid, brave, don't cry, scary, shy, baby, or anything that does not fit your child.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Prevents unwanted framing.",
+          "illustrationImpact": "No direct visual impact.",
+          "therapeuticPurpose": "Avoids shame, pressure, or triggering language."
+        }
+      ]
+    },
+    {
+      "id": "photos_visual_references",
+      "label": "Photos & Visual References",
+      "questions": [
+        {
+          "id": "photo_child_reference",
+          "section": "Photos & Visual References",
+          "question": "Upload a clear photo of your child for face and body reference.",
+          "helperText": "Required. This helps the illustration feel recognizably like your child while preserving a storybook style.",
+          "type": "photo_upload",
+          "options": ["child_face_body_reference"],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "No text impact unless visual details are described.",
+          "illustrationImpact": "Primary reference for child likeness, hair, skin tone, body shape, glasses, mobility aids, and style.",
+          "therapeuticPurpose": "Self-recognition helps the child see themself succeeding in the transition."
+        },
+        {
+          "id": "photo_caregivers",
+          "section": "Photos & Visual References",
+          "question": "Upload photos of the caregiver who drops off and the caregiver who picks up, if they should appear.",
+          "helperText": "Highly recommended. These photos support the goodbye and reunion scenes.",
+          "type": "photo_upload",
+          "options": ["dropoff_caregiver", "pickup_caregiver"],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "May reinforce correct caregiver roles.",
+          "illustrationImpact": "Guides caregiver likeness in drop-off and pickup scenes.",
+          "therapeuticPurpose": "Makes separation and reunion visually concrete."
+        },
+        {
+          "id": "photo_school_items",
+          "section": "Photos & Visual References",
+          "question": "Upload any school items your child will recognize.",
+          "helperText": "Highly recommended: backpack, lunchbox, water bottle, comfort object, cubby, or playground.",
+          "type": "photo_upload",
+          "options": ["backpack", "lunchbox_water_bottle", "comfort_object", "cubby", "playground"],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "May mention familiar belongings.",
+          "illustrationImpact": "Adds recognizable objects that make preschool feel familiar.",
+          "therapeuticPurpose": "Uses concrete familiar cues to reduce novelty."
+        },
+        {
+          "id": "photo_school_place",
+          "section": "Photos & Visual References",
+          "question": "Upload photos of the school or classroom if you have them.",
+          "helperText": "Highly recommended: school exterior, classroom, teacher if allowed, cubby area, playground.",
+          "type": "photo_upload",
+          "options": ["school_exterior", "classroom", "teacher_if_allowed", "cubby_area", "playground"],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "May add place-specific details.",
+          "illustrationImpact": "Guides accurate visual preview of school spaces.",
+          "therapeuticPurpose": "Builds environmental familiarity before the first day."
+        },
+        {
+          "id": "photo_family_pet",
+          "section": "Photos & Visual References",
+          "question": "Upload a family photo or pet photo if they will be included.",
+          "helperText": "Optional. Include these only if they support the story.",
+          "type": "photo_upload",
+          "options": ["family_photo", "pet_photo"],
+          "required": false,
+          "branchingLogic": "Shown if siblings_pets_adults or should_appear mentions family members or pets.",
+          "storyImpact": "May support home scene references.",
+          "illustrationImpact": "Guides likeness for family or pet appearances.",
+          "therapeuticPurpose": "Adds familiar attachment anchors when helpful."
+        }
+      ]
+    },
+    {
+      "id": "parent_goals",
+      "label": "Parent Goals",
+      "questions": [
+        {
+          "id": "success_goals",
+          "section": "Parent Goals",
+          "question": "What would success look like after reading this story together?",
+          "helperText": "Choose the outcomes that matter most to your family.",
+          "type": "multi_select",
+          "options": ["easier_dropoff", "fewer_tears", "more_excitement", "understanding_routine", "feeling_brave", "asking_for_help", "knowing_parent_comes_back", "making_friends", "using_coping_strategy"],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Prioritizes ending message, repeated phrases, and resolution.",
+          "illustrationImpact": "Highlights success scenes aligned with goals.",
+          "therapeuticPurpose": "Connects personalization choices to functional emotional outcomes."
+        },
+        {
+          "id": "most_important_goal",
+          "section": "Parent Goals",
+          "question": "If the story could help with one thing most, what would it be?",
+          "helperText": "This helps us focus the emotional arc instead of trying to do everything at once.",
+          "type": "text",
+          "options": [],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Sets the primary therapeutic throughline.",
+          "illustrationImpact": "Guides which scene receives the most emotional emphasis.",
+          "therapeuticPurpose": "Maintains a clear intervention target."
+        }
+      ]
+    },
+    {
+      "id": "story_preferences",
+      "label": "Story Preferences",
+      "questions": [
+        {
+          "id": "story_length",
+          "section": "Story Preferences",
+          "question": "How long should the story feel?",
+          "helperText": "Shorter stories are easier to reread often. Longer stories allow deeper routine preview.",
+          "type": "single_select",
+          "options": ["short_8_10_pages", "standard_12_16_pages", "longer_18_24_pages"],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Controls number of scenes and level of detail.",
+          "illustrationImpact": "Controls illustration count and pacing.",
+          "therapeuticPurpose": "Matches attention span and repetition needs."
+        },
+        {
+          "id": "story_tone",
+          "section": "Story Preferences",
+          "question": "What tone would fit your child best?",
+          "helperText": "Tone changes how gently or playfully the story approaches the transition.",
+          "type": "single_select",
+          "options": ["very_gentle", "cheerful", "practical", "playful"],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Adjusts voice, pacing, humor, and emotional intensity.",
+          "illustrationImpact": "Influences expression, color energy, and scene mood.",
+          "therapeuticPurpose": "Matches the child's regulation needs and family style."
+        },
+        {
+          "id": "illustration_style",
+          "section": "Story Preferences",
+          "question": "Which illustration style do you prefer?",
+          "helperText": "Choose the look that your child is most likely to enjoy and recognize.",
+          "type": "single_select",
+          "options": ["soft_watercolor", "warm_storybook", "bright_playful", "simple_clean", "no_preference"],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "No direct text impact.",
+          "illustrationImpact": "Sets visual style direction.",
+          "therapeuticPurpose": "Supports engagement and repeated reading."
+        },
+        {
+          "id": "include_parent_note",
+          "section": "Story Preferences",
+          "question": "Would you like a parent note included at the end?",
+          "helperText": "A parent note can give you language for rereading and practicing the routine.",
+          "type": "boolean",
+          "options": ["yes", "no"],
+          "required": true,
+          "branchingLogic": "If yes, generate parent note using main concern and coping strategy.",
+          "storyImpact": "Adds or omits adult-facing guidance.",
+          "illustrationImpact": "No direct visual impact.",
+          "therapeuticPurpose": "Supports parent-led repetition and co-regulation."
+        },
+        {
+          "id": "digital_print_needs",
+          "section": "Story Preferences",
+          "question": "How do you plan to use the story?",
+          "helperText": "This helps us format the book for real-life use.",
+          "type": "multi_select",
+          "options": ["read_on_phone", "read_on_tablet", "print_at_home", "professional_print", "share_with_teacher"],
+          "required": true,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "May include teacher-share note if selected.",
+          "illustrationImpact": "May affect page layout and print-safe details.",
+          "therapeuticPurpose": "Encourages repeated access in the contexts where the child needs support."
+        }
+      ]
+    },
+    {
+      "id": "safety_review",
+      "label": "Safety & Review",
+      "questions": [
+        {
+          "id": "avoid_content",
+          "section": "Safety & Review",
+          "question": "Is there anything we should avoid including?",
+          "helperText": "Share anything that may upset, confuse, or feel unhelpful for your child.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Removes or reframes sensitive content.",
+          "illustrationImpact": "Prevents unwanted visuals.",
+          "therapeuticPurpose": "Protects emotional safety."
+        },
+        {
+          "id": "sensitive_context",
+          "section": "Safety & Review",
+          "question": "Is there anything sensitive happening in your child's life that we should handle carefully?",
+          "helperText": "Only share what feels relevant to the preschool story.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Guides gentle wording and prevents unintended triggers.",
+          "illustrationImpact": "May prevent or adjust family scenes.",
+          "therapeuticPurpose": "Maintains attachment safety and avoids accidental harm."
+        },
+        {
+          "id": "not_ready_to_hear",
+          "section": "Safety & Review",
+          "question": "Is there anything your child is not ready to hear or practice yet?",
+          "helperText": "We can keep the story developmentally honest without pushing too far.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Limits advanced concepts or unwanted goals.",
+          "illustrationImpact": "May remove certain scenes.",
+          "therapeuticPurpose": "Prevents overexposure and respects readiness."
+        },
+        {
+          "id": "developmental_needs",
+          "section": "Safety & Review",
+          "question": "Are there developmental, language, sensory, disability, or neurodivergent needs we should know about?",
+          "helperText": "This helps us adjust language, pacing, visuals, and supports respectfully.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "Adjusts vocabulary, processing time, communication style, and support scripts.",
+          "illustrationImpact": "May include AAC, glasses, hearing devices, mobility supports, headphones, or other accurate details.",
+          "therapeuticPurpose": "Makes the story accessible, affirming, and useful for the child's actual needs."
+        },
+        {
+          "id": "final_review",
+          "section": "Safety & Review",
+          "question": "Is there anything else you want us to know before we create the story?",
+          "helperText": "Use this space for details that did not fit anywhere else.",
+          "type": "textarea",
+          "options": [],
+          "required": false,
+          "branchingLogic": "Always shown.",
+          "storyImpact": "May refine personalization or flag review needs.",
+          "illustrationImpact": "May refine visual references.",
+          "therapeuticPurpose": "Gives the parent a final sense of agency and care."
+        }
+      ]
+    }
+  ],
+  "recommendedScreenOrder": [
+    {
+      "screenId": "welcome",
+      "progressLabel": "Start",
+      "questionIds": [],
+      "note": "Briefly explain that the form asks only what will shape the story."
+    },
+    {
+      "screenId": "child_identity",
+      "progressLabel": "Child Basics",
+      "questionIds": ["child_name", "child_age", "pronouns"]
+    },
+    {
+      "screenId": "start_context",
+      "progressLabel": "Child Basics",
+      "questionIds": ["preschool_start_date", "prior_group_care"]
+    },
+    {
+      "screenId": "personality_1",
+      "progressLabel": "Personality",
+      "questionIds": ["temperament", "social_style"]
+    },
+    {
+      "screenId": "personality_2",
+      "progressLabel": "Personality",
+      "questionIds": ["sensitivity_level", "favorite_interests", "makes_child_laugh"]
+    },
+    {
+      "screenId": "main_concerns",
+      "progressLabel": "Preschool Concerns",
+      "questionIds": ["main_concerns"]
+    },
+    {
+      "screenId": "concern_branch_1",
+      "progressLabel": "Preschool Concerns",
+      "questionIds": ["separation_child_response", "teacher_familiarity", "friendship_style"],
+      "note": "Show only questions triggered by selected concerns, max 3 at a time."
+    },
+    {
+      "screenId": "concern_branch_2",
+      "progressLabel": "Preschool Concerns",
+      "questionIds": ["bathroom_help_needed", "sensory_sensitivity", "routine_preview_priority"],
+      "note": "Show only triggered questions."
+    },
+    {
+      "screenId": "concern_branch_3",
+      "progressLabel": "Preschool Concerns",
+      "questionIds": ["food_routine_details", "rest_habit", "direction_supports"],
+      "note": "Show only triggered questions."
+    },
+    {
+      "screenId": "dropoff_1",
+      "progressLabel": "Drop-Off",
+      "questionIds": ["dropoff_person", "dropoff_routine"]
+    },
+    {
+      "screenId": "dropoff_2",
+      "progressLabel": "Drop-Off",
+      "questionIds": ["goodbye_words", "safe_reassurance", "what_not_to_promise"]
+    },
+    {
+      "screenId": "pickup",
+      "progressLabel": "Drop-Off",
+      "questionIds": ["returning_adult", "pickup_routine"]
+    },
+    {
+      "screenId": "school_names",
+      "progressLabel": "Preschool Day",
+      "questionIds": ["school_name", "teacher_name", "classroom_name"]
+    },
+    {
+      "screenId": "arrival_belongings",
+      "progressLabel": "Preschool Day",
+      "questionIds": ["arrival_routine", "cubby_backpack_location"]
+    },
+    {
+      "screenId": "routine_parts",
+      "progressLabel": "Preschool Day",
+      "questionIds": ["routine_known_parts"]
+    },
+    {
+      "screenId": "comfort_1",
+      "progressLabel": "Comfort Tools",
+      "questionIds": ["calming_supports", "comfort_object"]
+    },
+    {
+      "screenId": "comfort_2",
+      "progressLabel": "Comfort Tools",
+      "questionIds": ["comfort_object_school_allowed", "breathing_tool", "comfort_song_or_phrase"],
+      "note": "Show comfort_object_school_allowed only if relevant."
+    },
+    {
+      "screenId": "family_1",
+      "progressLabel": "Family",
+      "questionIds": ["caregiver_names", "siblings_pets_adults"]
+    },
+    {
+      "screenId": "family_2",
+      "progressLabel": "Family",
+      "questionIds": ["should_appear", "should_not_appear"]
+    },
+    {
+      "screenId": "language_1",
+      "progressLabel": "Language",
+      "questionIds": ["caregiver_words", "bathroom_wording", "teacher_wording"]
+    },
+    {
+      "screenId": "language_2",
+      "progressLabel": "Language",
+      "questionIds": ["school_wording", "family_phrases", "words_to_avoid"]
+    },
+    {
+      "screenId": "photos_child",
+      "progressLabel": "Photos",
+      "questionIds": ["photo_child_reference"]
+    },
+    {
+      "screenId": "photos_people",
+      "progressLabel": "Photos",
+      "questionIds": ["photo_caregivers", "photo_family_pet"]
+    },
+    {
+      "screenId": "photos_school",
+      "progressLabel": "Photos",
+      "questionIds": ["photo_school_items", "photo_school_place"]
+    },
+    {
+      "screenId": "goals",
+      "progressLabel": "Goals",
+      "questionIds": ["success_goals", "most_important_goal"]
+    },
+    {
+      "screenId": "preferences_1",
+      "progressLabel": "Story Style",
+      "questionIds": ["story_length", "story_tone", "illustration_style"]
+    },
+    {
+      "screenId": "preferences_2",
+      "progressLabel": "Story Style",
+      "questionIds": ["include_parent_note", "digital_print_needs"]
+    },
+    {
+      "screenId": "safety_1",
+      "progressLabel": "Review",
+      "questionIds": ["avoid_content", "sensitive_context"]
+    },
+    {
+      "screenId": "safety_2",
+      "progressLabel": "Review",
+      "questionIds": ["not_ready_to_hear", "developmental_needs", "final_review"]
+    }
+  ],
+  "requiredQuestionIds": [
+    "child_name",
+    "child_age",
+    "pronouns",
+    "prior_group_care",
+    "temperament",
+    "social_style",
+    "sensitivity_level",
+    "favorite_interests",
+    "main_concerns",
+    "dropoff_person",
+    "dropoff_routine",
+    "goodbye_words",
+    "safe_reassurance",
+    "returning_adult",
+    "school_name",
+    "arrival_routine",
+    "routine_known_parts",
+    "pickup_routine",
+    "calming_supports",
+    "caregiver_names",
+    "should_appear",
+    "caregiver_words",
+    "photo_child_reference",
+    "success_goals",
+    "most_important_goal",
+    "story_length",
+    "story_tone",
+    "illustration_style",
+    "include_parent_note",
+    "digital_print_needs"
+  ],
+  "minimumViableQuestionnaire": {
+    "description": "The shortest version that can still produce a meaningful preschool preparation story.",
+    "questionIds": [
+      "child_name",
+      "child_age",
+      "pronouns",
+      "prior_group_care",
+      "temperament",
+      "favorite_interests",
+      "main_concerns",
+      "dropoff_person",
+      "dropoff_routine",
+      "goodbye_words",
+      "safe_reassurance",
+      "returning_adult",
+      "school_name",
+      "teacher_name",
+      "arrival_routine",
+      "routine_known_parts",
+      "pickup_routine",
+      "calming_supports",
+      "caregiver_words",
+      "photo_child_reference",
+      "success_goals",
+      "story_tone",
+      "avoid_content"
+    ],
+    "estimatedScreens": 10,
+    "estimatedCompletionMinutes": 8
+  },
+  "premiumDeeperPersonalization": {
+    "description": "The complete version for stronger visual accuracy, richer emotional fit, and more precise therapeutic support.",
+    "includeAllSections": true,
+    "emphasis": [
+      "Concern-specific branches",
+      "Detailed sensory and regulation supports",
+      "Family language and words to avoid",
+      "Photos of school, belongings, teacher if allowed, and pickup/drop-off adults",
+      "Developmental, language, disability, and neurodivergent needs",
+      "Parent note and teacher-share formatting"
+    ],
+    "estimatedScreens": 22,
+    "estimatedCompletionMinutes": 18
+  },
+  "sampleCompletedAnswers": {
+    "fictionalChild": "Maya",
+    "answers": {
+      "child_name": "Maya",
+      "child_age": "3",
+      "pronouns": "she/her",
+      "preschool_start_date": "2026-09-08",
+      "prior_group_care": "some_daycare_or_classes",
+      "prior_experience_notes": "She did a weekly music class and usually watched for a few minutes before joining.",
+      "temperament": "slow_to_warm",
+      "social_style": "watches_first",
+      "sensitivity_level": "somewhat_sensitive",
+      "favorite_interests": "Dinosaurs, purple shoes, bubbles, and pretending to be a doctor.",
+      "makes_child_laugh": "Silly rhymes and when Daddy uses a funny dinosaur voice.",
+      "main_concerns": ["separation_from_parent", "making_friends", "loud_classroom", "not_knowing_routine"],
+      "separation_child_response": "cries_or_clings",
+      "friendship_style": "shy_or_slow_to_join",
+      "joining_play_support": "Can I play too? What are you making?",
+      "sensory_sensitivity": ["loud_noise", "many_children_talking", "crowded_transitions"],
+      "noise_supports": ["covering_ears", "quiet_corner", "teacher_check_in"],
+      "routine_preview_priority": ["arrival", "cubby_backpack", "circle_time", "free_play", "snack_lunch", "pickup"],
+      "dropoff_person": "Mama",
+      "dropoff_routine": "Mama will walk Maya to the classroom door, help her hang up her backpack, give one hug, and say goodbye.",
+      "goodbye_words": "I love you. I always come back after school.",
+      "safe_reassurance": ["grownup_comes_back_after_school", "teacher_will_help", "child_can_miss_parent_and_still_play", "pickup_person_will_arrive"],
+      "returning_adult": "Mama",
+      "what_not_to_promise": "Do not say Mama will stay nearby or that Maya will not cry.",
+      "school_name": "Willow Tree Preschool",
+      "teacher_name": "Ms. Ana",
+      "classroom_name": "Sunflower Room",
+      "arrival_routine": "Hang backpack on a hook, put water bottle in the basket, then choose a table activity.",
+      "cubby_backpack_location": "A hook with Maya's name and a sunflower picture.",
+      "routine_known_parts": ["circle_time", "play_time", "snack", "bathroom", "outside_play", "cleanup", "pickup"],
+      "pickup_routine": "Mama waits outside the classroom door. Ms. Ana calls Maya's name, and Maya brings her backpack.",
+      "calming_supports": ["deep_breaths", "quiet_space", "holding_object", "adult_words"],
+      "comfort_object": "Small purple dinosaur",
+      "comfort_object_school_allowed": "yes_in_backpack",
+      "breathing_tool": "Smell the flower, blow the candle.",
+      "comfort_song_or_phrase": "Mama says, 'You can miss me and still have a good day.'",
+      "caregiver_names": "Mama and Daddy",
+      "siblings_pets_adults": "Baby brother Leo and Grandma Ruth. Dog named Pickle.",
+      "should_appear": "Mama, Daddy, Ms. Ana, baby Leo in the home scene, and Pickle if there is room.",
+      "should_not_appear": "No extended family besides Grandma Ruth.",
+      "caregiver_words": "Mama and Daddy",
+      "bathroom_wording": "potty",
+      "teacher_wording": "teacher or Ms. Ana",
+      "school_wording": "preschool",
+      "family_phrases": "You can do hard things with help.",
+      "words_to_avoid": "Do not call Maya shy or tell her to be a big girl.",
+      "success_goals": ["easier_dropoff", "understanding_routine", "knowing_parent_comes_back", "making_friends", "using_coping_strategy"],
+      "most_important_goal": "Maya understands that Mama leaves and comes back after preschool.",
+      "story_length": "standard_12_16_pages",
+      "story_tone": "very_gentle",
+      "illustration_style": "warm_storybook",
+      "include_parent_note": "yes",
+      "digital_print_needs": ["read_on_tablet", "print_at_home", "share_with_teacher"],
+      "avoid_content": "Avoid crowded illustrations that look chaotic.",
+      "sensitive_context": "Maya has been clingier since baby Leo was born.",
+      "not_ready_to_hear": "Do not imply she has to stay all day happily.",
+      "developmental_needs": "Maya needs extra processing time and simple one-step language."
+    }
+  },
+  "storyMapping": {
+    "outline": [
+      {
+        "storyBeat": "Home introduction",
+        "usesData": ["child_name", "favorite_interests", "caregiver_names", "siblings_pets_adults"],
+        "purpose": "Start from familiarity before introducing preschool."
+      },
+      {
+        "storyBeat": "Preschool is coming",
+        "usesData": ["school_name", "preschool_start_date", "school_wording", "prior_group_care"],
+        "purpose": "Name the transition and place it in time."
+      },
+      {
+        "storyBeat": "Preview the school place",
+        "usesData": ["photo_school_place", "classroom_name", "teacher_name"],
+        "purpose": "Build environmental familiarity."
+      },
+      {
+        "storyBeat": "Arrival and belongings routine",
+        "usesData": ["dropoff_routine", "arrival_routine", "cubby_backpack_location", "photo_school_items"],
+        "purpose": "Give the child a concrete first job."
+      },
+      {
+        "storyBeat": "Goodbye moment",
+        "usesData": ["dropoff_person", "goodbye_words", "separation_child_response", "safe_reassurance", "what_not_to_promise"],
+        "purpose": "Validate separation feelings and use truthful reassurance."
+      },
+      {
+        "storyBeat": "Trusted school adult helps",
+        "usesData": ["teacher_name", "teacher_help_language", "help_request_language", "teacher_wording"],
+        "purpose": "Transfer support from caregiver to teacher."
+      },
+      {
+        "storyBeat": "Preschool routine sequence",
+        "usesData": ["routine_known_parts", "routine_preview_priority", "transition_supports"],
+        "purpose": "Reduce uncertainty through predictable order."
+      },
+      {
+        "storyBeat": "Main concern scene",
+        "usesData": ["main_concerns", "bathroom_help_needed", "food_supports", "rest_habit", "friendship_style", "sensory_sensitivity", "direction_supports"],
+        "purpose": "Address the selected emotional or practical challenge directly."
+      },
+      {
+        "storyBeat": "Coping strategy",
+        "usesData": ["calming_supports", "comfort_object", "comfort_object_school_allowed", "breathing_tool", "comfort_song_or_phrase", "sensory_needs"],
+        "purpose": "Show the child using a realistic support."
+      },
+      {
+        "storyBeat": "Small success",
+        "usesData": ["success_goals", "most_important_goal", "story_tone"],
+        "purpose": "Show confidence growing without requiring perfect happiness."
+      },
+      {
+        "storyBeat": "Pickup and reunion",
+        "usesData": ["returning_adult", "pickup_routine", "safe_reassurance", "photo_caregivers"],
+        "purpose": "Reinforce that trusted adults come back."
+      },
+      {
+        "storyBeat": "Repeatable closing phrase",
+        "usesData": ["family_phrases", "goodbye_words", "caregiver_words"],
+        "purpose": "Give the family a line to practice before school."
+      },
+      {
+        "storyBeat": "Optional parent note",
+        "usesData": ["include_parent_note", "main_concerns", "calming_supports", "success_goals", "developmental_needs"],
+        "purpose": "Help the caregiver reread the story therapeutically."
+      }
+    ],
+    "safetyRules": [
+      "Never promise that the child will not cry, will love school immediately, or that a caregiver will stay nearby unless the parent explicitly confirms it is true.",
+      "Do not frame crying, clinging, sensory overwhelm, accidents, or needing help as failure.",
+      "Use 'brave' carefully and avoid it if words_to_avoid includes brave or pressure-based language.",
+      "If family structure or sensitive context is provided, keep references precise and avoid assumptions.",
+      "If developmental_needs mentions AAC, language delay, neurodivergence, disability, or sensory supports, reflect needs affirmingly and concretely."
+    ]
+  }
+}
